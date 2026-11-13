@@ -32,7 +32,7 @@ export function SeriesPage({ s, minimal = false, imageOverrides }: { s: Series; 
         {minimal && <p className="mock-note">* Цена за одну накладку. Размер подтверждаем по фото вашей панели</p>}
       </div></section>
       <section><div className="wrap">
-        <div className="sec-head"><h2>{s.intTitle}</h2><p>{s.intLead}</p></div>
+        <div className="sec-head"><h2>{s.intTitle}</h2></div>
         <div className="interiors">
           {s.interiors?.map((i) => (
             <figure className="int" key={i.img}>
