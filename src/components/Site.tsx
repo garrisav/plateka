@@ -1,7 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
 import { langSearch, noticeText, useDocumentLang, useLang, useT, type Lang } from "@/lib/i18n";
-import type { Card } from "@/lib/catalog";
+import { displaySku, type Card } from "@/lib/catalog";
+import { imageSrc } from "@/lib/media";
+import { Button } from "@/components/ui/button";
 
 const NAV = [
   ["/", "nav.home", "Главная"], ["/georgia", "nav.georgia", "Грузия"], ["/italy", "nav.italy", "Италия"],
@@ -26,7 +28,7 @@ export function Layout({ theme, children }: { theme: string; children: ReactNode
               activeProps={{ "aria-current": "page" }}>{t(k, ru)}</Link>
           ))}
         </nav>
-        <button className="burger" aria-expanded={open} aria-label="Меню" onClick={() => setOpen(!open)}>☰</button>
+        <Button className="burger" aria-expanded={open} aria-label="Меню" onClick={() => setOpen(!open)}>☰</Button>
         <div className="langs" role="group" aria-label="Язык">
           {(["he", "ru", "en"] as Lang[]).map((l) => (
             <Link key={l} to="." search={(prev) => { const { lang: _old, ...rest } = prev; return l === "ru" ? rest : { ...rest, lang: l }; }}
@@ -37,8 +39,8 @@ export function Layout({ theme, children }: { theme: string; children: ReactNode
       <main>{children}</main>
       <footer><div className="wrap">
         <div><Link className="logo" to="/" search={langSearch(lang)}>Plate<span>ka</span></Link>
-          <p>Dress your plate · декор для израильских розеток и выключателей</p></div>
-        <p>Мы не делаем розетки и выключатели и не вмешиваемся в электрику. Изображения на сайте — визуализации дизайна, а не фото готового изделия.</p>
+          <p>Dress your plate · декор для розеток и выключателей</p></div>
+        <p>Мы не делаем розетки и выключатели и не вмешиваемся в электрику. На сайте представлены визуализации дизайна, а не фото готового изделия.</p>
       </div></footer>
     </div>
   );
@@ -46,7 +48,7 @@ export function Layout({ theme, children }: { theme: string; children: ReactNode
 
 export function Fit() {
   return (
-    <p className="fit"><span>Штатная рамка, клавиша и механизм остаются на месте — декор клеится поверх панели или обрамляет её. <b>Подходит для квадратных панелей. Пришлите фото — подтвердим размер.</b></span></p>
+    <p className="fit"><span>Штатная рамка, клавиша и механизм остаются на месте. Декор клеится поверх панели или обрамляет её. <b>Подходит для квадратных панелей. Пришлите фото, и мы подтвердим размер.</b></span></p>
   );
 }
 
@@ -57,15 +59,15 @@ export function ProductCard({ c }: { c: Card }) {
     <article className="card" id={c.sku}>
       <div className="ph">
         {c.tag && <span className={`tag${c.soon ? " soon" : ""}`}>{c.tag}</span>}
-        <img src={`/img/${c.img}`} alt={`${c.name} — ${c.kind.toLowerCase()}, белая накладка на квадратной панели`} loading="lazy" width={509} height={524} />
+        <img src={imageSrc(c.img)} alt={`${c.name}, ${c.kind.toLowerCase()}, белая накладка на квадратной панели`} loading="lazy" width={900} height={900} />
       </div>
       <div className="body">
-        <span className="sku">{c.sku} · <span>{c.kind}</span></span>
+        <span className="sku">{displaySku(c.sku)} · <span>{c.kind}</span></span>
         <h3>{c.name}</h3><p className="where">{c.where}</p>
         <div className="foot">
           <span className="price">₪ __</span>
           {c.soon ? <span className="where">Скоро</span>
-            : <Link to="/order" search={langSearch(lang, { design: c.sku })}>{t("btn.order", "Заказать")}</Link>}
+            : <Button asChild variant="link" className="order-link"><Link to="/order" search={langSearch(lang, { design: c.sku })}>{t("btn.order", "Заказать")}</Link></Button>}
         </div>
       </div>
     </article>

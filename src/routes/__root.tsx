@@ -86,10 +86,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Plateka — декор для розеток и выключателей" },
-      { name: "description", content: "Декоративные накладки для израильских розеток и выключателей" },
+      { title: "Plateka · декор для розеток и выключателей" },
+      { name: "description", content: "Декоративные накладки для розеток и выключателей" },
       { property: "og:title", content: "Plateka" },
-      { property: "og:description", content: "Декоративные накладки для израильских розеток и выключателей" },
+      { property: "og:description", content: "Декоративные накладки для розеток и выключателей" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
           ],

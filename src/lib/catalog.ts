@@ -1,11 +1,10 @@
 export type Card = { sku: string; name: string; kind: string; where: string; img: string; tag?: string; soon?: boolean };
 export type Interior = { img: string; x: number; y: number; sku: string; name: string; cap: string; sub: string };
-export type PhInterior = { kind: string; title: string; src: string; bg: string; pattern: string; mini: string };
 export type Series = {
   theme: "georgia" | "italy" | "china" | "japan";
   title: string; kicker: string; h1: string; lead: string;
   hero: { img: string; alt: string; square?: boolean };
-  cards: Card[]; interiors?: Interior[]; phInteriors?: PhInterior[];
+  cards: Card[]; interiors?: Interior[];
   intTitle: string; intLead: string; places: string[];
 };
 
@@ -31,54 +30,54 @@ export const SERIES: Record<Series["theme"], Series> = {
   italy: {
     theme: "italy", title: "Итальянская тратория", kicker: "Серия 02 · Италия", h1: "Итальянская тратория",
     lead: "Аканф, олива, готическое окно и лилия. Спокойные белые рамки для стен цвета охры и выцветшей штукатурки.",
-    hero: { img: "it-akanf.jpg", alt: "Выключатель в рамке «Аканф»", square: true },
+    hero: { img: "italy-entry-interior.jpg", alt: "Выключатель «Аканф» на розовой стене тратории рядом с натюрмортом" },
     cards: [
       { sku: "IT-01", name: "Аканф", kind: "Выключатель", where: "Вход в зал, лепной потолок", img: "it-akanf.jpg" },
       { sku: "IT-02", name: "Олива", kind: "Розетка", where: "Кухня, стена у буфета", img: "it-oliva.jpg" },
       { sku: "IT-03", name: "Готика", kind: "Розетка", where: "Винный погреб, коридор", img: "it-gotika.jpg" },
       { sku: "IT-04", name: "Лилия", kind: "Выключатель", where: "Прихожая, спальня", img: "it-liliya.jpg" },
     ],
-    phInteriors: [
-      { kind: "Розетка", title: "Тратория, стена у буфета", src: "по натюрмортам Джорджо Моранди", bg: "#8C7B66", pattern: "radial-gradient(circle at 30% 70%,#C9B79C 0 18%,transparent 19%),radial-gradient(circle at 62% 64%,#A89379 0 12%,transparent 13%)", mini: "it-oliva.jpg" },
-      { kind: "Выключатель", title: "Вход в зал", src: "по натюрмортам Джорджо Моранди", bg: "#6E6455", pattern: "linear-gradient(90deg,transparent 60%,rgba(255,255,255,.12) 60% 64%,transparent 64%)", mini: "it-akanf.jpg" },
+    interiors: [
+      { img: "italy-buffet-interior.jpg", x: 75, y: 58, sku: "IT-02", name: "Олива", cap: "Розетка «Олива» у буфета", sub: "Оливковая штукатурка, керамика и натюрморт" },
+      { img: "italy-entry-interior.jpg", x: 67, y: 51, sku: "IT-01", name: "Аканф", cap: "Выключатель «Аканф» у входа", sub: "Розовая стена, мрамор и тёмное дерево" },
     ],
-    intTitle: "Интерьеры: в работе",
-    intLead: "Следующий этап: два интерьера в палитре натюрмортов Джорджо Моранди. Приглушённый белый, охра, серо-розовый.",
+    intTitle: "В интерьере",
+    intLead: "Натюрморты в духе Джорджо Моранди, оливковая штукатурка, розовые стены и старый орех. Белый рельеф продолжает листья на керамике и резные детали тратории.",
     places: ["Тратория", "Пиццерия", "Кофейня", "Винотека", "Кухня дома", "Прихожая"],
   },
   china: {
     theme: "china", title: "Китайский зал", kicker: "Серия 03 · Китай", h1: "Китайский зал",
     lead: "Облака, меандр и пион. Рамки для залов с лаком, тёмным деревом и красным акцентом.",
-    hero: { img: "cn-oblaka.jpg", alt: "Розетка в рамке «Облака»", square: true },
+    hero: { img: "china-tea-interior.jpg", alt: "Розетка «Облака» на нефритовой стене чайной с пейзажем и фарфором" },
     cards: [
       { sku: "CN-01", name: "Облака", kind: "Розетка", where: "Чайная комната, зал", img: "cn-oblaka.jpg" },
       { sku: "CN-02", name: "Меандр", kind: "Розетка", where: "Коридор, барная стойка", img: "cn-meandr.jpg" },
       { sku: "CN-03", name: "Пион", kind: "Выключатель", where: "Вход, приватный кабинет", img: "cn-pion.jpg" },
       { sku: "CN-04", name: "В работе", kind: "Выключатель", where: "Новый дизайн серии", img: "cn-meandr.jpg", tag: "Скоро", soon: true },
     ],
-    phInteriors: [
-      { kind: "Розетка", title: "Чайная комната", src: "по живописи шань-шуй эпохи Сун", bg: "#2E3A35", pattern: "repeating-linear-gradient(170deg,transparent 0 22px,rgba(255,255,255,.06) 22px 24px)", mini: "cn-oblaka.jpg" },
-      { kind: "Выключатель", title: "Вход в зал", src: "по цветам и птицам Ци Байши", bg: "#5B2324", pattern: "radial-gradient(circle at 75% 30%,#8E3A3A 0 14%,transparent 15%)", mini: "cn-pion.jpg" },
+    interiors: [
+      { img: "china-tea-interior.jpg", x: 74, y: 58, sku: "CN-01", name: "Облака", cap: "Розетка «Облака» в чайной", sub: "Нефритовая стена, пейзаж и селадон" },
+      { img: "china-entry-interior.jpg", x: 64, y: 49, sku: "CN-03", name: "Пион", cap: "Выключатель «Пион» у входа", sub: "Красный лак, резное дерево и цветочная живопись" },
     ],
-    intTitle: "Интерьеры: в работе",
-    intLead: "Следующий этап: два интерьера по мотивам пейзажей шань-шуй эпохи Сун и цветов Ци Байши.",
-    places: ["Китайский ресторан", "Чайная", "Дим-сам бар", "Кабинет", "Гостиная", "Прихожая"],
+    intTitle: "В интерьере",
+    intLead: "Пейзажи эпохи Сун и цветы в духе Ци Байши, резное дерево, фарфор и тёплый свет фонарей. Облака на нефритовой стене и пион на красной перекликаются с живописью.",
+    places: ["Китайский ресторан", "Чайная", "Бар димсам", "Кабинет", "Гостиная", "Прихожая"],
   },
   japan: {
     theme: "japan", title: "Японская стойка", kicker: "Серия 04 · Япония", h1: "Японская стойка",
     lead: "Бамбук и чистые линии. Рамки для светлого дерева, бумаги сёдзи и неяркого света.",
-    hero: { img: "jp-bambuk.jpg", alt: "Выключатель в рамке «Бамбук»", square: true },
+    hero: { img: "japan-counter-interior.jpg", alt: "Выключатель «Бамбук» на стене цвета индиго у японской стойки" },
     cards: [
       { sku: "JP-01", name: "Бамбук", kind: "Выключатель", where: "Вход, коридор с сёдзи", img: "jp-bambuk.jpg" },
       { sku: "JP-02", name: "В работе", kind: "Розетка", where: "Новый дизайн серии", img: "jp-bambuk.jpg", tag: "Скоро", soon: true },
     ],
-    phInteriors: [
-      { kind: "Розетка", title: "Стойка суши-бара", src: "по гравюрам укиё-э Хиросигэ", bg: "#23324A", pattern: "repeating-radial-gradient(circle at 50% 120%,transparent 0 14px,rgba(255,255,255,.08) 14px 16px)", mini: "jp-bambuk.jpg" },
-      { kind: "Выключатель", title: "Коридор с сёдзи", src: "по гравюрам укиё-э Хокусая", bg: "#3B3A33", pattern: "repeating-linear-gradient(90deg,transparent 0 46px,rgba(255,255,255,.1) 46px 49px)", mini: "jp-bambuk.jpg" },
+    interiors: [
+      { img: "japan-counter-interior.jpg", x: 66, y: 49, sku: "JP-01", name: "Бамбук", cap: "Выключатель «Бамбук» у стойки", sub: "Индиго, кедр и гравюра в духе Хиросигэ" },
+      { img: "japan-shoji-interior.jpg", x: 64, y: 50, sku: "JP-01", name: "Бамбук", cap: "Выключатель «Бамбук» рядом с сёдзи", sub: "Моховая штукатурка, керамика и бумажный свет" },
     ],
-    intTitle: "Интерьеры: в работе",
-    intLead: "Следующий этап: два интерьера по мотивам гравюр укиё-э (Хиросигэ и Хокусай).",
-    places: ["Суши-бар", "Рамен-бар", "Чайная", "Спальня", "Кабинет", "Прихожая"],
+    intTitle: "В интерьере",
+    intLead: "Гравюры в духе Хиросигэ и Хокусая, кедровая стойка, керамика и свет сквозь сёдзи. Белый бамбук связывает стены цвета индиго и мха с природными деталями комнаты.",
+    places: ["Суши бар", "Рамен бар", "Чайная", "Спальня", "Кабинет", "Прихожая"],
   },
 };
 
@@ -103,7 +102,9 @@ export function buildOrderMailto(f: { design: string; qty: string; name: string;
   return `mailto:${ORDER_EMAIL}?subject=${encodeURIComponent("Заявка Plateka: " + f.design)}&body=${encodeURIComponent(body)}`;
 }
 
-export const pageHead = (title: string, description = "Декоративные накладки для израильских розеток и выключателей") => ({
+export const displaySku = (sku: string) => sku.replaceAll("-", " ");
+
+export const pageHead = (title: string, description = "Декоративные накладки для розеток и выключателей") => ({
   meta: [
     { title: `${title} | Plateka` },
     { name: "description", content: description },

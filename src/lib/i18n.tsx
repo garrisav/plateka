@@ -11,13 +11,13 @@ const DICT: Record<"en" | "he", Record<string, string>> = {
     "nav.home": "Home", "nav.georgia": "Georgia", "nav.italy": "Italy", "nav.china": "China",
     "nav.japan": "Japan", "nav.offices": "Offices", "nav.order": "Order",
     "btn.order": "Order", "btn.catalog": "View catalog",
-    notice: "English version is in progress — some text is still in Russian.",
+    notice: "English version is in progress. Some text is still in Russian.",
   },
   he: {
     "nav.home": "ראשי", "nav.georgia": "גאורגיה", "nav.italy": "איטליה", "nav.china": "סין",
     "nav.japan": "יפן", "nav.offices": "משרדים", "nav.order": "הזמנה",
     "btn.order": "להזמנה", "btn.catalog": "לקטלוג",
-    notice: "הגרסה בעברית בהכנה — חלק מהטקסט עדיין ברוסית.",
+    notice: "הגרסה בעברית בהכנה. חלק מהטקסט עדיין ברוסית.",
   },
 };
 
