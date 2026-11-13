@@ -14,8 +14,10 @@ import { Route as ChinaRouteImport } from './routes/china'
 import { Route as GeorgiaRouteImport } from './routes/georgia'
 import { Route as ItalyRouteImport } from './routes/italy'
 import { Route as JapanRouteImport } from './routes/japan'
+import { Route as McpRouteImport } from './routes/mcp'
 import { Route as OfficesRouteImport } from './routes/offices'
 import { Route as OrderRouteImport } from './routes/order'
+import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -42,6 +44,11 @@ const JapanRoute = JapanRouteImport.update({
   path: '/japan',
   getParentRoute: () => rootRouteImport,
 } as any)
+const McpRoute = McpRouteImport.update({
+  id: '/mcp',
+  path: '/mcp',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OfficesRoute = OfficesRouteImport.update({
   id: '/offices',
   path: '/offices',
@@ -52,6 +59,12 @@ const OrderRoute = OrderRouteImport.update({
   path: '/order',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Char91DotwellKnownChar93OauthProtectedResourceRoute =
+  Char91DotwellKnownChar93OauthProtectedResourceRouteImport.update({
+    id: '/.well-known/oauth-protected-resource',
+    path: '/.well-known/oauth-protected-resource',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -59,8 +72,10 @@ export interface FileRoutesByFullPath {
   '/georgia': typeof GeorgiaRoute
   '/italy': typeof ItalyRoute
   '/japan': typeof JapanRoute
+  '/mcp': typeof McpRoute
   '/offices': typeof OfficesRoute
   '/order': typeof OrderRoute
+  '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -68,8 +83,10 @@ export interface FileRoutesByTo {
   '/georgia': typeof GeorgiaRoute
   '/italy': typeof ItalyRoute
   '/japan': typeof JapanRoute
+  '/mcp': typeof McpRoute
   '/offices': typeof OfficesRoute
   '/order': typeof OrderRoute
+  '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -78,15 +95,34 @@ export interface FileRoutesById {
   '/georgia': typeof GeorgiaRoute
   '/italy': typeof ItalyRoute
   '/japan': typeof JapanRoute
+  '/mcp': typeof McpRoute
   '/offices': typeof OfficesRoute
   '/order': typeof OrderRoute
+  '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/china' | '/georgia' | '/italy' | '/japan' | '/offices' | '/order'
+    | '/'
+    | '/china'
+    | '/georgia'
+    | '/italy'
+    | '/japan'
+    | '/mcp'
+    | '/offices'
+    | '/order'
+    | '/.well-known/oauth-protected-resource'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/china' | '/georgia' | '/italy' | '/japan' | '/offices' | '/order'
+  to:
+    | '/'
+    | '/china'
+    | '/georgia'
+    | '/italy'
+    | '/japan'
+    | '/mcp'
+    | '/offices'
+    | '/order'
+    | '/.well-known/oauth-protected-resource'
   id:
     | '__root__'
     | '/'
@@ -94,8 +130,10 @@ export interface FileRouteTypes {
     | '/georgia'
     | '/italy'
     | '/japan'
+    | '/mcp'
     | '/offices'
     | '/order'
+    | '/.well-known/oauth-protected-resource'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -104,8 +142,10 @@ export interface RootRouteChildren {
   GeorgiaRoute: typeof GeorgiaRoute
   ItalyRoute: typeof ItalyRoute
   JapanRoute: typeof JapanRoute
+  McpRoute: typeof McpRoute
   OfficesRoute: typeof OfficesRoute
   OrderRoute: typeof OrderRoute
+  Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -145,6 +185,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof JapanRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mcp': {
+      id: '/mcp'
+      path: '/mcp'
+      fullPath: '/mcp'
+      preLoaderRoute: typeof McpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/offices': {
       id: '/offices'
       path: '/offices'
@@ -159,6 +206,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OrderRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/.well-known/oauth-protected-resource': {
+      id: '/.well-known/oauth-protected-resource'
+      path: '/.well-known/oauth-protected-resource'
+      fullPath: '/.well-known/oauth-protected-resource'
+      preLoaderRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -168,8 +222,11 @@ const rootRouteChildren: RootRouteChildren = {
   GeorgiaRoute: GeorgiaRoute,
   ItalyRoute: ItalyRoute,
   JapanRoute: JapanRoute,
+  McpRoute: McpRoute,
   OfficesRoute: OfficesRoute,
   OrderRoute: OrderRoute,
+  Char91DotwellKnownChar93OauthProtectedResourceRoute:
+    Char91DotwellKnownChar93OauthProtectedResourceRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
