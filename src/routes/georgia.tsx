@@ -4,7 +4,7 @@ import { SERIES, pageHead } from "@/lib/catalog";
 
 export const Route = createFileRoute("/georgia")({
   head: () => pageHead(SERIES.georgia.title, SERIES.georgia.lead),
-  component: () => <SeriesPage s={SERIES.georgia} minimal greeting={{
+  component: () => <SeriesPage s={SERIES.georgia} minimal hideInteriorCaptions greeting={{
     lang: "ka", text: "მობრძანდით!", translation: "Добро пожаловать!",
   }} nativeNames={{
     "GE-01": { lang: "ka", text: "ვაზი", translation: "Виноградная лоза" },

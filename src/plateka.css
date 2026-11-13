@@ -97,6 +97,7 @@ section{padding-block:clamp(2.5rem,6vw,5rem)}
 .card .foot .order-link{height:auto;padding:0;white-space:normal}
 .product-native-name{display:grid;gap:.3rem;margin-block-start:.3rem}
 .native-name{font-family:var(--font-georgian);font-size:var(--pk-native-name-size);font-weight:500;line-height:1.5;letter-spacing:0;color:var(--pk-ceramic);overflow-wrap:anywhere}
+.greeting-text[lang="it"],.native-name[lang="it"]{font-family:var(--font-display)}
 .native-translation{font-size:var(--pk-native-translation-size);color:var(--pk-muted);line-height:1.5}
 
 /* Interiors with hotspot */
@@ -170,7 +171,7 @@ footer p{max-width:60ch}
 }
 @media (max-width:420px){
   .native-series{--pk-native-greeting-size:2.5rem}
-  [data-theme="georgia"]{--pk-native-name-size:1.125rem;--pk-native-translation-size:.8125rem}
+  [data-theme="georgia"],[data-theme="italy"]{--pk-native-name-size:1.125rem;--pk-native-translation-size:.8125rem}
   .grid{grid-template-columns:1fr 1fr;gap:.7rem}
   .card .body{padding:.75rem}
   .card h3{font-size:1.2rem}

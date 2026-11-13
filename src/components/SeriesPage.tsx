@@ -3,7 +3,7 @@ import { displaySku, type Series } from "@/lib/catalog";
 import { imageSrc } from "@/lib/media";
 import { ProductNativeName, type NativeName } from "./NativeName";
 
-export function SeriesPage({ s, minimal = false, imageOverrides, greeting, nativeNames }: { s: Series; minimal?: boolean; imageOverrides?: Record<string, string>; greeting?: NativeName; nativeNames?: Record<string, NativeName> }) {
+export function SeriesPage({ s, minimal = false, imageOverrides, greeting, nativeNames, hideInteriorCaptions = false }: { s: Series; minimal?: boolean; imageOverrides?: Record<string, string>; greeting?: NativeName; nativeNames?: Record<string, NativeName>; hideInteriorCaptions?: boolean }) {
   const seriesImage = (name: string) => imageSrc(imageOverrides?.[name] ?? name);
   return (
     <Layout theme={s.theme}>
@@ -32,10 +32,10 @@ export function SeriesPage({ s, minimal = false, imageOverrides, greeting, nativ
             <figure className="int" key={i.img}>
               <div className="frame"><img src={seriesImage(i.img)} alt={i.cap} loading="lazy" width={1120} height={1400} />
                 {!minimal && <a className="spot-label" href={`#${i.sku}`} style={{ left: `${i.x}%`, top: `${i.y}%`, translate: "-50% 0" }}>{displaySku(i.sku)} · {i.name}</a>}</div>
-              <figcaption className={nativeNames?.[i.sku] ? "native-caption" : undefined}>
+              {!hideInteriorCaptions && <figcaption className={nativeNames?.[i.sku] ? "native-caption" : undefined}>
                 {nativeNames?.[i.sku] ? <b className="sku">{displaySku(i.sku)}</b> : minimal ? <b>{displaySku(i.sku)} · {i.name}</b> : <><b>{i.cap}</b><span>{i.sub}</span></>}
                 <ProductNativeName name={nativeNames?.[i.sku]} />
-              </figcaption>
+              </figcaption>}
             </figure>
           ))}
         </div>

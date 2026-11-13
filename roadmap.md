@@ -50,3 +50,10 @@
 - [x] Reduce main title and greeting by 20 percent, retaining their hierarchy and attached punctuation.
 - [x] Rename Georgia catalog heading and remove duplicate Russian names from product labels.
 - [x] Verify desktop and mobile layout and ordering, run relevant tests and commit.
+
+## Georgian interior captions and Italian presentation
+
+- [x] Remove captions below Georgian interior images and apply the same clean layout to Italy.
+- [x] Add an Italian dining phrase, its translation below the main image, and Italian product names with one translation.
+- [x] Reuse the approved title hierarchy and series heading format without altering product images or identifiers.
+- [x] Verify desktop and mobile pages, model ordering and other series; run relevant tests and commit.
