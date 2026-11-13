@@ -5,3 +5,10 @@
 - [x] Match product image backgrounds to each series palette.
 - [x] Replace room photos on the home page with product visualizations.
 - [x] Verify pages, images and ordering links on desktop and mobile, run existing tests and commit.
+
+## Georgia review
+
+- [x] Reduce outlet and switch scale in Georgian interior images and match the panel and frame whites.
+- [x] Remove model labels from Georgian interiors and simplify Georgian product captions.
+- [x] Move the Georgian catalog explanation to an asterisk note below the products.
+- [x] Verify Georgia on desktop and mobile, preserve other series, run relevant tests and commit.

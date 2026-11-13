@@ -13,8 +13,16 @@ import chinaClouds from "@/assets/china-clouds-product.jpg";
 import chinaMeander from "@/assets/china-meander-product.jpg";
 import chinaPeony from "@/assets/china-peony-product.jpg";
 import japanBamboo from "@/assets/japan-bamboo-product.jpg";
+import georgiaVine from "@/assets/georgia-vine-interior.jpg";
+import georgiaSun from "@/assets/georgia-sun-interior.jpg";
+import georgiaVineProduct from "@/assets/georgia-vine-product.jpg";
+import georgiaBraidProduct from "@/assets/georgia-braid-product.jpg";
 
 const images: Record<string, string> = {
+  "georgia-vine-interior.jpg": georgiaVine,
+  "georgia-sun-interior.jpg": georgiaSun,
+  "ge-loza.jpg": georgiaVineProduct,
+  "ge-pletenka.jpg": georgiaBraidProduct,
   "italy-buffet-interior.jpg": italyBuffet,
   "italy-entry-interior.jpg": italyEntry,
   "china-tea-interior.jpg": chinaTea,

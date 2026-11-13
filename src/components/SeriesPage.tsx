@@ -5,9 +5,10 @@ import { langSearch, useLang, useT } from "@/lib/i18n";
 import { displaySku, type Series } from "@/lib/catalog";
 import { imageSrc } from "@/lib/media";
 
-export function SeriesPage({ s }: { s: Series }) {
+export function SeriesPage({ s, minimal = false, imageOverrides }: { s: Series; minimal?: boolean; imageOverrides?: Record<string, string> }) {
   const lang = useLang();
   const t = useT();
+  const seriesImage = (name: string) => imageSrc(imageOverrides?.[name] ?? name);
   return (
     <Layout theme={s.theme}>
       <div className="wrap hero">
@@ -22,21 +23,22 @@ export function SeriesPage({ s }: { s: Series }) {
           <Fit />
         </div>
         <div className={`hero-media${s.hero.square ? " square" : ""}`}>
-          <img src={imageSrc(s.hero.img)} alt={s.hero.alt} width={s.hero.square ? 900 : 1120} height={s.hero.square ? 900 : 1400} />
+          <img src={seriesImage(s.hero.img)} alt={s.hero.alt} width={s.hero.square ? 900 : 1120} height={s.hero.square ? 900 : 1400} />
         </div>
       </div>
       <section className="band" id="catalog"><div className="wrap">
-        <div className="sec-head"><h2>Дизайны серии</h2><p>Белый пластик, печать в 3D. Цена за одну накладку. Размер подтверждаем по фото вашей панели.</p></div>
-        <div className="grid">{s.cards.map((c) => <ProductCard key={c.sku} c={c} />)}</div>
+        <div className="sec-head"><h2>Дизайны серии</h2>{!minimal && <p>Белый пластик, печать в 3D. Цена за одну накладку. Размер подтверждаем по фото вашей панели.</p>}</div>
+        <div className="grid">{s.cards.map((c) => <ProductCard key={c.sku} c={c} minimal={minimal} />)}</div>
+        {minimal && <p className="mock-note">* Цена за одну накладку. Размер подтверждаем по фото вашей панели</p>}
       </div></section>
       <section><div className="wrap">
         <div className="sec-head"><h2>{s.intTitle}</h2><p>{s.intLead}</p></div>
         <div className="interiors">
           {s.interiors?.map((i) => (
             <figure className="int" key={i.img}>
-              <div className="frame"><img src={imageSrc(i.img)} alt={i.cap} loading="lazy" width={1120} height={1400} />
-                <a className="spot-label" href={`#${i.sku}`} style={{ left: `${i.x}%`, top: `${i.y}%`, translate: "-50% 0" }}>{displaySku(i.sku)} · {i.name}</a></div>
-              <figcaption><b>{i.cap}</b><span>{i.sub}</span></figcaption>
+              <div className="frame"><img src={seriesImage(i.img)} alt={i.cap} loading="lazy" width={1120} height={1400} />
+                {!minimal && <a className="spot-label" href={`#${i.sku}`} style={{ left: `${i.x}%`, top: `${i.y}%`, translate: "-50% 0" }}>{displaySku(i.sku)} · {i.name}</a>}</div>
+              <figcaption>{minimal ? <b>{displaySku(i.sku)} · {i.name}</b> : <><b>{i.cap}</b><span>{i.sub}</span></>}</figcaption>
             </figure>
           ))}
         </div>

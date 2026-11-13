@@ -52,18 +52,18 @@ export function Fit() {
   );
 }
 
-export function ProductCard({ c }: { c: Card }) {
+export function ProductCard({ c, minimal = false }: { c: Card; minimal?: boolean }) {
   const lang = useLang();
   const t = useT();
   return (
     <article className="card" id={c.sku}>
       <div className="ph">
-        {c.tag && <span className={`tag${c.soon ? " soon" : ""}`}>{c.tag}</span>}
+        {!minimal && c.tag && <span className={`tag${c.soon ? " soon" : ""}`}>{c.tag}</span>}
         <img src={imageSrc(c.img)} alt={`${c.name}, ${c.kind.toLowerCase()}, белая накладка на квадратной панели`} loading="lazy" width={900} height={900} />
       </div>
       <div className="body">
-        <span className="sku">{displaySku(c.sku)} · <span>{c.kind}</span></span>
-        <h3>{c.name}</h3><p className="where">{c.where}</p>
+        <span className="sku">{displaySku(c.sku)}{!minimal && <> · <span>{c.kind}</span></>}</span>
+        <h3>{c.name}</h3>{!minimal && <p className="where">{c.where}</p>}
         <div className="foot">
           <span className="price">₪ __</span>
           {c.soon ? <span className="where">Скоро</span>
