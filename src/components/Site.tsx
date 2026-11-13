@@ -4,6 +4,7 @@ import { langSearch, noticeText, useDocumentLang, useLang, useT, type Lang } fro
 import { displaySku, type Card } from "@/lib/catalog";
 import { imageSrc } from "@/lib/media";
 import { Button } from "@/components/ui/button";
+import { ProductNativeName, type NativeName } from "./NativeName";
 
 const NAV = [
   ["/", "nav.home", "Главная"], ["/georgia", "nav.georgia", "Грузия"], ["/italy", "nav.italy", "Италия"],
@@ -52,7 +53,7 @@ export function CatalogNote({ customOrder = false }: { customOrder?: boolean }) 
   );
 }
 
-export function ProductCard({ c, minimal = false }: { c: Card; minimal?: boolean }) {
+export function ProductCard({ c, minimal = false, nativeName }: { c: Card; minimal?: boolean; nativeName?: NativeName | undefined }) {
   const lang = useLang();
   const t = useT();
   return (
@@ -64,6 +65,7 @@ export function ProductCard({ c, minimal = false }: { c: Card; minimal?: boolean
       <div className="body">
         <span className="sku">{displaySku(c.sku)}{!minimal && <> · <span>{c.kind}</span></>}</span>
         <h3>{c.name}</h3>{!minimal && <p className="where">{c.where}</p>}
+        <ProductNativeName name={nativeName} />
         <div className="foot">
           <span className="price">₪ __</span>
           {c.soon ? <span className="where">Скоро</span>

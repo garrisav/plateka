@@ -4,6 +4,10 @@
   --pk-accent:#9A3B2B; --pk-accent-ink:#fff; --pk-dark:#16130F;
   --pk-ceramic:#93482F;
   --font-georgian:'Noto Serif Georgian',Georgia,serif;
+  --pk-native-title-ratio:1.2133333333;
+  --pk-native-greeting-size:3.75rem;
+  --pk-native-name-size:1.375rem;
+  --pk-native-translation-size:.875rem;
   --font-display:'Playfair Display','Frank Ruhl Libre',Georgia,serif;
   --font-body:'Rubik','Segoe UI',sans-serif;
   --text-xs:clamp(.75rem,.72rem + .15vw,.8125rem);
@@ -56,7 +60,9 @@ h2{font-family:var(--font-display);font-size:var(--text-xl);line-height:1.15;fon
 h3{font-size:var(--text-lg);font-weight:600;line-height:1.3}
 .lead{color:var(--pk-muted);max-width:52ch;margin-block-end:1.6rem}
 .series-greeting{margin-block-start:2.5rem}
-.greeting-text{font-family:var(--font-georgian);font-size:2.5rem;line-height:1.4;font-weight:500;letter-spacing:0;color:var(--pk-ceramic);overflow-wrap:anywhere}
+.native-series h1{font-size:calc(var(--pk-native-greeting-size) * var(--pk-native-title-ratio));letter-spacing:0;overflow-wrap:normal}
+.greeting-text{font-family:var(--font-georgian);font-size:var(--pk-native-greeting-size);line-height:1.4;font-weight:500;letter-spacing:0;color:var(--pk-ceramic);overflow-wrap:anywhere}
+.greeting-asterisk{font-family:var(--font-body);font-size:.3em;vertical-align:super;line-height:0;margin-inline-start:.12em}
 .greeting-translation{font-size:var(--text-sm);color:var(--pk-muted);margin-block-start:.8rem}
 .hero-media{position:relative}
 .hero-media img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--pk-r)}
@@ -88,6 +94,9 @@ section{padding-block:clamp(2.5rem,6vw,5rem)}
 .card .foot a{font-size:var(--text-sm);font-weight:500;color:var(--pk-accent);text-decoration:none}
 .card .foot a:hover{text-decoration:underline}
 .card .foot .order-link{height:auto;padding:0;white-space:normal}
+.product-native-name{display:grid;gap:.3rem;margin-block-start:.3rem}
+.native-name{font-family:var(--font-georgian);font-size:var(--pk-native-name-size);font-weight:500;line-height:1.5;letter-spacing:0;color:var(--pk-ceramic);overflow-wrap:anywhere}
+.native-translation{font-size:var(--pk-native-translation-size);color:var(--pk-muted);line-height:1.5}
 
 /* Interiors with hotspot */
 .interiors{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,3vw,2rem)}
@@ -100,6 +109,7 @@ html[dir="rtl"] .spot{transform:translate(50%,-50%)}
 .spot-label:hover{background:var(--pk-accent);color:#fff}
 .int figcaption{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.35rem 1rem;padding-block-start:.8rem;font-size:var(--text-sm)}
 .int figcaption span{color:var(--pk-muted)}
+.int figcaption.native-caption{display:block}
 .mock-note{font-size:var(--text-xs);color:var(--pk-muted);margin-block-start:1.2rem}
 .catalog-note{max-width:100ch}
 
@@ -141,6 +151,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wra
 footer p{max-width:60ch}
 
 @media (max-width:980px){
+  .native-series{--pk-native-greeting-size:3rem}
   .grid{grid-template-columns:repeat(2,1fr)}
   .nav{display:none;position:absolute;inset-block-start:64px;inset-inline:0;background:var(--pk-bg);flex-direction:column;padding:1rem clamp(1rem,4vw,2.5rem);border-block-end:1px solid var(--pk-line);gap:.4rem}
   .nav.open{display:flex}
@@ -149,18 +160,21 @@ footer p{max-width:60ch}
   .tile,.tile.wide{grid-column:span 1;min-height:220px}
 }
 @media (max-width:720px){
+  .native-series{--pk-native-greeting-size:3rem}
   .series-greeting{margin-block-start:1.5rem}
-  .greeting-text{font-size:2rem}
   .hero,.split,.interiors{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr}
   .hero-media{order:-1}
   .hero-media img{aspect-ratio:4/3}
 }
 @media (max-width:420px){
+  .native-series{--pk-native-greeting-size:2.5rem}
+  [data-theme="georgia"]{--pk-native-name-size:1.125rem;--pk-native-translation-size:.8125rem}
   .grid{grid-template-columns:1fr 1fr;gap:.7rem}
   .card .body{padding:.75rem}
   .card h3{font-size:1.2rem}
   .card .foot{flex-direction:column;align-items:flex-start}
   .tiles{grid-template-columns:1fr}
 }
+@media (max-width:350px){.native-series{--pk-native-greeting-size:2.125rem}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}

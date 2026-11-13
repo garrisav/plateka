@@ -37,3 +37,10 @@
 - [x] Update only Italian interiors with realistic product scale, matching white frames and minimal captions.
 - [x] Add a Georgian welcome and Russian translation below the Georgia title in a ceramic accent color.
 - [x] Verify image fidelity, Italian ordering, desktop and mobile layouts; run tests and commit images and code.
+
+## Georgian typography and names
+
+- [x] Enlarge the main title and greeting, maintaining the title as the larger text and preserving a reusable ratio.
+- [x] Attach a small asterisk to the greeting and move its translation below the main image.
+- [x] Add Georgian product names and smaller Russian translations to cards and interior captions.
+- [x] Verify desktop and mobile text fit, other pages and ordering; run tests and commit.

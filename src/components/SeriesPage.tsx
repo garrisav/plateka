@@ -1,27 +1,28 @@
 import { CatalogNote, Layout, ProductCard } from "./Site";
 import { displaySku, type Series } from "@/lib/catalog";
 import { imageSrc } from "@/lib/media";
+import { ProductNativeName, type NativeName } from "./NativeName";
 
-export function SeriesPage({ s, minimal = false, imageOverrides, greeting }: { s: Series; minimal?: boolean; imageOverrides?: Record<string, string>; greeting?: { lang: string; text: string; translation: string } }) {
+export function SeriesPage({ s, minimal = false, imageOverrides, greeting, nativeNames }: { s: Series; minimal?: boolean; imageOverrides?: Record<string, string>; greeting?: NativeName; nativeNames?: Record<string, NativeName> }) {
   const seriesImage = (name: string) => imageSrc(imageOverrides?.[name] ?? name);
   return (
     <Layout theme={s.theme}>
-      <div className="wrap hero">
+      <div className={`wrap hero${greeting ? " native-series" : ""}`}>
         <div>
           <p className="kicker">{s.kicker}</p>
           <h1>{s.h1}</h1>
           {greeting && <div className="series-greeting">
-            <p className="greeting-text" lang={greeting.lang} dir="ltr">{greeting.text}</p>
-            <p className="greeting-translation">* {greeting.translation}</p>
+            <p className="greeting-text" lang={greeting.lang} dir="ltr">{greeting.text}<sup className="greeting-asterisk">*</sup></p>
           </div>}
         </div>
-        <div className={`hero-media${s.hero.square ? " square" : ""}`}>
+        <figure className={`hero-media${s.hero.square ? " square" : ""}`}>
           <img src={seriesImage(s.hero.img)} alt={s.hero.alt} width={s.hero.square ? 900 : 1120} height={s.hero.square ? 900 : 1400} />
-        </div>
+          {greeting && <figcaption className="greeting-translation">* {greeting.translation}</figcaption>}
+        </figure>
       </div>
       <section className="band" id="catalog"><div className="wrap">
         <div className="sec-head"><h2>Дизайны серии</h2></div>
-        <div className="grid">{s.cards.map((c) => <ProductCard key={c.sku} c={c} minimal={minimal} />)}</div>
+        <div className="grid">{s.cards.map((c) => <ProductCard key={c.sku} c={c} minimal={minimal} nativeName={nativeNames?.[c.sku]} />)}</div>
         <CatalogNote />
       </div></section>
       <section><div className="wrap">
@@ -31,7 +32,10 @@ export function SeriesPage({ s, minimal = false, imageOverrides, greeting }: { s
             <figure className="int" key={i.img}>
               <div className="frame"><img src={seriesImage(i.img)} alt={i.cap} loading="lazy" width={1120} height={1400} />
                 {!minimal && <a className="spot-label" href={`#${i.sku}`} style={{ left: `${i.x}%`, top: `${i.y}%`, translate: "-50% 0" }}>{displaySku(i.sku)} · {i.name}</a>}</div>
-              <figcaption>{minimal ? <b>{displaySku(i.sku)} · {i.name}</b> : <><b>{i.cap}</b><span>{i.sub}</span></>}</figcaption>
+              <figcaption className={nativeNames?.[i.sku] ? "native-caption" : undefined}>
+                {minimal ? <b>{displaySku(i.sku)} · {i.name}</b> : <><b>{i.cap}</b><span>{i.sub}</span></>}
+                <ProductNativeName name={nativeNames?.[i.sku]} />
+              </figcaption>
             </figure>
           ))}
         </div>
