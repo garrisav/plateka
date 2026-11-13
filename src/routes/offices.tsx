@@ -17,7 +17,6 @@ function Offices() {
         <div>
           <p className="kicker">Серия 05 · Офисы</p>
           <h1>Ваша айдентика даже на выключателе</h1>
-          <p className="lead">Для стартапов и студий, которые продумывают каждую деталь офиса. Делаем рамку под ваш знак, цвет и шрифт.</p>
           <div className="actions"><Button asChild className="btn"><Link to="/order" search={langSearch(lang, { design: "OF" })}>Обсудить заказ для офиса</Link></Button></div>
           <Fit />
         </div>

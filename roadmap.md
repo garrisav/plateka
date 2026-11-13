@@ -19,3 +19,8 @@
 - [x] Update Chinese interiors with smaller, matching white products using the uploaded references.
 - [x] Apply the approved minimal captions and price note to China only.
 - [x] Verify original image fidelity, Chinese model ordering, desktop and mobile pages; run tests and commit.
+
+## Series heading cleanup
+
+- [x] Remove descriptive subtitles below main headings on all themed series and office pages; preserve homepage and order instructions.
+- [x] Verify headings, images and order links remain intact, run routing tests and commit.

@@ -15,7 +15,6 @@ export function SeriesPage({ s, minimal = false, imageOverrides }: { s: Series; 
         <div>
           <p className="kicker">{s.kicker}</p>
           <h1>{s.h1}</h1>
-          <p className="lead">{s.lead}</p>
           <div className="actions">
             <Button asChild className="btn"><a href="#catalog">{t("btn.catalog", "Смотреть дизайны")}</a></Button>
             <Button asChild className="btn ghost"><Link to="/order" search={langSearch(lang)}>Прислать фото панели</Link></Button>
