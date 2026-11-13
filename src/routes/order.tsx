@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import { Fit, Layout } from "@/components/Site";
+import { CatalogNote, Layout } from "@/components/Site";
 import { ORDER_OPTIONS, WHATSAPP_URL, buildOrderMailto, displaySku, pageHead } from "@/lib/catalog";
 import { Button } from "@/components/ui/button";
 
@@ -30,7 +30,6 @@ function Order() {
           <p className="kicker">Заявка</p>
           <h1>Пришлите фото панели, и мы подтвердим размер</h1>
           <p className="lead">Мы ответим, подходит ли дизайн к вашей панели, и назовём итоговую цену. Оплата только после подтверждения размера.</p>
-          <Fit />
           <p style={{ marginBlockStart: "1.5rem" }}><Button asChild className="btn ghost"><a href={WHATSAPP_URL}>Написать в WhatsApp</a></Button></p>
         </div>
         <form noValidate onSubmit={submit} key={initial}>
@@ -42,6 +41,7 @@ function Order() {
           <label><span>Комментарий</span><textarea name="msg" rows={3} /><span className="hint">Фото панели прикрепите к письму или пришлите в WhatsApp.</span></label>
           <Button className="btn" type="submit">Отправить заявку</Button>
           <p className="hint" role="status">{status}</p>
+          <CatalogNote customOrder={initial.startsWith("OF")} />
         </form>
       </div>
     </Layout>

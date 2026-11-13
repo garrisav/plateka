@@ -36,3 +36,4 @@ use the editor.
 - Keep SKU values unchanged internally and format them with displaySku for presentation so copy changes cannot break order links.
 - Use opt-in minimal presentation and route-scoped interior image overrides for staged page reviews; keep catalog identifiers and other pages unchanged until approved.
 - Store uploaded product originals unmodified on Lovable Assets and commit their JSON pointers; resolve each pointer's URL through the shared media map to preserve exact source pixels.
+- Render installation, compatibility and unit-price guidance through the shared CatalogNote below catalogs and the order form; one shared component prevents divergent explanations.

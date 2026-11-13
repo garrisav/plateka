@@ -1,9 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Fit, Layout } from "@/components/Site";
+import { CatalogNote, Layout } from "@/components/Site";
 import { langSearch, useLang, useT } from "@/lib/i18n";
 import { pageHead } from "@/lib/catalog";
 import { imageSrc } from "@/lib/media";
-import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
   head: () => pageHead("Декор для розеток и выключателей"),
@@ -28,11 +27,6 @@ function Home() {
           <p className="kicker">Каталог · осень 2026</p>
            <h1>Белая панель на стене тоже может быть частью интерьера</h1>
            <p className="lead">Декоративные накладки для розеток и выключателей. Клеятся поверх штатной панели или обрамляют её. Без электрика и без замены фурнитуры.</p>
-          <div className="actions">
-            <Button asChild className="btn"><Link to="/georgia" search={s}>Серия «Грузинский стол»</Link></Button>
-            <Button asChild className="btn ghost"><Link to="/order" search={s}>Прислать фото панели</Link></Button>
-          </div>
-          <Fit />
         </div>
         <div className="hero-media"><img src={imageSrc("home-dining-mockup.jpg")} alt="Визуализация столовой с ботанической росписью и выключателем «Солнце»" width={1120} height={1400} /></div>
       </div>
@@ -46,6 +40,7 @@ function Home() {
             </Link>
           ))}
         </div>
+        <CatalogNote />
       </div></section>
       <section><div className="wrap split">
          <img className="context-image" src={imageSrc("italy-buffet-interior.jpg")} alt="Визуализация розетки «Олива» на стене с натюрмортом у деревянного буфета" loading="lazy" width={1120} height={1400} />

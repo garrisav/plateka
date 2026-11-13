@@ -24,3 +24,9 @@
 
 - [x] Remove descriptive subtitles below main headings on all themed series and office pages; preserve homepage and order instructions.
 - [x] Verify headings, images and order links remain intact, run routing tests and commit.
+
+## Catalog buttons and notes
+
+- [x] Remove introductory catalog and photo buttons and their unused code across pages, preserving product ordering and form controls.
+- [x] Combine installation, panel compatibility and per-item price information into one clear shared note below relevant products and form.
+- [x] Verify all pages, mobile layout and model ordering, run existing tests and commit.
