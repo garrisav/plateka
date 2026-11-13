@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "sdk_version": "3.5.0",
+  "path": "/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "plateka",
+      "version": "0.1.0",
+      "title": "Plateka"
+    },
+    "tools": [
+      {
+        "name": "list_series",
+        "title": "List series",
+        "description": "List the Plateka design series (Georgia, Italy, China, Japan, Offices) with a short description.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_designs",
+        "title": "List designs",
+        "description": "List decorative outlet/switch cover designs, optionally for one series, with SKU, type, image and order link.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {
+            "series": {
+              "description": "Series id; omit for all designs.",
+              "type": "string",
+              "enum": [
+                "georgia",
+                "italy",
+                "china",
+                "japan",
+                "offices"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_design",
+        "title": "Get design",
+        "description": "Get one design by SKU (e.g. GE-01) with its series, image and order link.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {
+            "sku": {
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 10,
+              "description": "Design SKU, e.g. GE-01."
+            }
+          },
+          "required": [
+            "sku"
+          ],
+          "additionalProperties": false
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
