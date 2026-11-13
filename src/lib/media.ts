@@ -9,9 +9,12 @@ import italyAcanthus from "@/assets/italy-acanthus-product.jpg";
 import italyOlive from "@/assets/italy-olive-product.jpg";
 import italyGothic from "@/assets/italy-gothic-product.jpg";
 import italyLily from "@/assets/italy-lily-product.jpg";
-import chinaClouds from "@/assets/china-clouds-product.jpg";
-import chinaMeander from "@/assets/china-meander-product.jpg";
-import chinaPeony from "@/assets/china-peony-product.jpg";
+import chinaClouds from "@/assets/china-clouds-original.png.asset.json";
+import chinaMeander from "@/assets/china-meander-original.png.asset.json";
+import chinaPeony from "@/assets/china-peony-original.png.asset.json";
+import chinaBamboo from "@/assets/china-bamboo-original.png.asset.json";
+import chinaCloudsReviewed from "@/assets/china-clouds-reviewed-interior.jpg";
+import chinaPeonyReviewed from "@/assets/china-peony-reviewed-interior.jpg";
 import japanBamboo from "@/assets/japan-bamboo-product.jpg";
 import georgiaVine from "@/assets/georgia-vine-interior.jpg";
 import georgiaSun from "@/assets/georgia-sun-interior.jpg";
@@ -27,6 +30,8 @@ const images: Record<string, string> = {
   "italy-entry-interior.jpg": italyEntry,
   "china-tea-interior.jpg": chinaTea,
   "china-entry-interior.jpg": chinaEntry,
+  "china-clouds-reviewed-interior.jpg": chinaCloudsReviewed,
+  "china-peony-reviewed-interior.jpg": chinaPeonyReviewed,
   "japan-counter-interior.jpg": japanCounter,
   "japan-shoji-interior.jpg": japanShoji,
   "home-dining-mockup.jpg": homeDining,
@@ -34,9 +39,10 @@ const images: Record<string, string> = {
   "it-oliva.jpg": italyOlive,
   "it-gotika.jpg": italyGothic,
   "it-liliya.jpg": italyLily,
-  "cn-oblaka.jpg": chinaClouds,
-  "cn-meandr.jpg": chinaMeander,
-  "cn-pion.jpg": chinaPeony,
+  "cn-oblaka.jpg": chinaClouds.url,
+  "cn-meandr.jpg": chinaMeander.url,
+  "cn-pion.jpg": chinaPeony.url,
+  "cn-bamboo.png": chinaBamboo.url,
   "jp-bambuk.jpg": japanBamboo,
 };
 

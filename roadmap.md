@@ -12,3 +12,10 @@
 - [x] Remove model labels from Georgian interiors and simplify Georgian product captions.
 - [x] Move the Georgian catalog explanation to an asterisk note below the products.
 - [x] Verify Georgia on desktop and mobile, preserve other series, run relevant tests and commit.
+
+## China review
+
+- [x] Use all four uploaded Chinese product images without modifying their socket or switch structure.
+- [x] Update Chinese interiors with smaller, matching white products using the uploaded references.
+- [x] Apply the approved minimal captions and price note to China only.
+- [x] Verify original image fidelity, Chinese model ordering, desktop and mobile pages; run tests and commit.
