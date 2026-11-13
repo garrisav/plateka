@@ -12,7 +12,7 @@ export type Series = {
 export const SERIES: Record<Series["theme"], Series> = {
   georgia: {
     theme: "georgia", title: "Грузинский стол", kicker: "Серия 01 · Грузия", h1: "Грузинский стол",
-    lead: "Лоза, плетёнка, арки и солнечные розетки — орнаменты, которые продолжают тёплую штукатурку, глиняные кувшины и картины на стене.",
+    lead: "Лоза, плетёнка, арки и солнечные розетки. Орнаменты, которые продолжают тёплую штукатурку, глиняные кувшины и картины на стене.",
     hero: { img: "ge-int-plug.jpg", alt: "Розетка в рамке «Лоза» рядом с картиной застолья в духе Пиросмани" },
     cards: [
       { sku: "GE-01", name: "Лоза", kind: "Розетка", where: "У стола, рядом с винной полкой", img: "ge-loza.jpg", tag: "Вариант A" },
@@ -25,7 +25,7 @@ export const SERIES: Record<Series["theme"], Series> = {
       { img: "ge-int-switch.jpg", x: 69, y: 46.5, sku: "GE-04", name: "Солнце", cap: "Выключатель «Солнце» у прохода", sub: "Рядом с ланью на чёрной клеёнке" },
     ],
     intTitle: "В интерьере",
-    intLead: "Интерьеры навеяны картинами Нико Пиросмани: чёрная клеёнка, застолье, лань. Рамка — единственная светлая деталь на стене, взгляд идёт к ней.",
+    intLead: "Интерьеры навеяны картинами Нико Пиросмани: чёрная клеёнка, застолье, лань. Рамка, единственная светлая деталь на стене, притягивает взгляд.",
     places: ["Грузинский ресторан", "Винный бар", "Хинкальная", "Гостевой дом", "Столовая дома", "Банкетный зал"],
   },
   italy: {
@@ -42,8 +42,8 @@ export const SERIES: Record<Series["theme"], Series> = {
       { kind: "Розетка", title: "Тратория, стена у буфета", src: "по натюрмортам Джорджо Моранди", bg: "#8C7B66", pattern: "radial-gradient(circle at 30% 70%,#C9B79C 0 18%,transparent 19%),radial-gradient(circle at 62% 64%,#A89379 0 12%,transparent 13%)", mini: "it-oliva.jpg" },
       { kind: "Выключатель", title: "Вход в зал", src: "по натюрмортам Джорджо Моранди", bg: "#6E6455", pattern: "linear-gradient(90deg,transparent 60%,rgba(255,255,255,.12) 60% 64%,transparent 64%)", mini: "it-akanf.jpg" },
     ],
-    intTitle: "Интерьеры — в работе",
-    intLead: "Следующий этап: два интерьера в палитре натюрмортов Джорджо Моранди — приглушённый белый, охра, серо-розовый.",
+    intTitle: "Интерьеры: в работе",
+    intLead: "Следующий этап: два интерьера в палитре натюрмортов Джорджо Моранди. Приглушённый белый, охра, серо-розовый.",
     places: ["Тратория", "Пиццерия", "Кофейня", "Винотека", "Кухня дома", "Прихожая"],
   },
   china: {
@@ -60,7 +60,7 @@ export const SERIES: Record<Series["theme"], Series> = {
       { kind: "Розетка", title: "Чайная комната", src: "по живописи шань-шуй эпохи Сун", bg: "#2E3A35", pattern: "repeating-linear-gradient(170deg,transparent 0 22px,rgba(255,255,255,.06) 22px 24px)", mini: "cn-oblaka.jpg" },
       { kind: "Выключатель", title: "Вход в зал", src: "по цветам и птицам Ци Байши", bg: "#5B2324", pattern: "radial-gradient(circle at 75% 30%,#8E3A3A 0 14%,transparent 15%)", mini: "cn-pion.jpg" },
     ],
-    intTitle: "Интерьеры — в работе",
+    intTitle: "Интерьеры: в работе",
     intLead: "Следующий этап: два интерьера по мотивам пейзажей шань-шуй эпохи Сун и цветов Ци Байши.",
     places: ["Китайский ресторан", "Чайная", "Дим-сам бар", "Кабинет", "Гостиная", "Прихожая"],
   },
@@ -76,8 +76,8 @@ export const SERIES: Record<Series["theme"], Series> = {
       { kind: "Розетка", title: "Стойка суши-бара", src: "по гравюрам укиё-э Хиросигэ", bg: "#23324A", pattern: "repeating-radial-gradient(circle at 50% 120%,transparent 0 14px,rgba(255,255,255,.08) 14px 16px)", mini: "jp-bambuk.jpg" },
       { kind: "Выключатель", title: "Коридор с сёдзи", src: "по гравюрам укиё-э Хокусая", bg: "#3B3A33", pattern: "repeating-linear-gradient(90deg,transparent 0 46px,rgba(255,255,255,.1) 46px 49px)", mini: "jp-bambuk.jpg" },
     ],
-    intTitle: "Интерьеры — в работе",
-    intLead: "Следующий этап: два интерьера по мотивам гравюр укиё-э — Хиросигэ и Хокусай.",
+    intTitle: "Интерьеры: в работе",
+    intLead: "Следующий этап: два интерьера по мотивам гравюр укиё-э (Хиросигэ и Хокусай).",
     places: ["Суши-бар", "Рамен-бар", "Чайная", "Спальня", "Кабинет", "Прихожая"],
   },
 };
@@ -105,9 +105,9 @@ export function buildOrderMailto(f: { design: string; qty: string; name: string;
 
 export const pageHead = (title: string, description = "Декоративные накладки для израильских розеток и выключателей") => ({
   meta: [
-    { title: `${title} — Plateka` },
+    { title: `${title} | Plateka` },
     { name: "description", content: description },
-    { property: "og:title", content: `${title} — Plateka` },
+    { property: "og:title", content: `${title} | Plateka` },
     { property: "og:description", content: description },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
