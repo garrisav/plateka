@@ -5,6 +5,11 @@ import chinaEntry from "@/assets/china-entry-interior.jpg";
 import japanCounter from "@/assets/japan-counter-interior.jpg";
 import japanShoji from "@/assets/japan-shoji-interior.jpg";
 import homeDining from "@/assets/home-dining-mockup.jpg";
+import homeDiningScaled from "@/assets/home-dining-scaled-interior.jpg";
+import homeGeorgiaScaled from "@/assets/home-georgia-scaled-interior.jpg";
+import homeItalyScaled from "@/assets/home-italy-scaled-interior.jpg";
+import homeChinaScaled from "@/assets/home-china-scaled-interior.jpg";
+import homeJapanScaled from "@/assets/home-japan-scaled-interior.jpg";
 import italyAcanthus from "@/assets/italy-acanthus-original.png.asset.json";
 import italyOlive from "@/assets/italy-olive-original.png.asset.json";
 import italyGothic from "@/assets/italy-gothic-original.png.asset.json";
@@ -39,6 +44,11 @@ const images: Record<string, string> = {
   "japan-counter-interior.jpg": japanCounter,
   "japan-shoji-interior.jpg": japanShoji,
   "home-dining-mockup.jpg": homeDining,
+  "home-dining-scaled-interior.jpg": homeDiningScaled,
+  "home-georgia-scaled-interior.jpg": homeGeorgiaScaled,
+  "home-italy-scaled-interior.jpg": homeItalyScaled,
+  "home-china-scaled-interior.jpg": homeChinaScaled,
+  "home-japan-scaled-interior.jpg": homeJapanScaled,
   "it-akanf.jpg": italyAcanthus.url,
   "it-oliva.jpg": italyOlive.url,
   "it-gotika.jpg": italyGothic.url,

@@ -14,10 +14,10 @@ function Home() {
   const t = useT();
   const s = langSearch(lang);
   const tiles = [
-    { to: "/georgia", k: "nav.georgia", ru: "Грузия", img: "georgia-vine-interior.jpg", sub: "Лоза, плетёнка, аркада, солнце", wide: true },
-    { to: "/italy", k: "nav.italy", ru: "Италия", img: "italy-olive-reviewed-interior.jpg", sub: "Аканф, олива, готика, лилия", wide: true },
-    { to: "/china", k: "nav.china", ru: "Китай", img: "china-entry-interior.jpg", sub: "Облака, меандр, пион" },
-    { to: "/japan", k: "nav.japan", ru: "Япония", img: "japan-counter-interior.jpg", sub: "Бамбук" },
+    { to: "/georgia", k: "nav.georgia", ru: "Грузия", img: "home-georgia-scaled-interior.jpg", sub: "Лоза, плетёнка, аркада, солнце", wide: true },
+    { to: "/italy", k: "nav.italy", ru: "Италия", img: "home-italy-scaled-interior.jpg", sub: "Аканф, олива, готика, лилия", wide: true },
+    { to: "/china", k: "nav.china", ru: "Китай", img: "home-china-scaled-interior.jpg", sub: "Облака, меандр, пион" },
+    { to: "/japan", k: "nav.japan", ru: "Япония", img: "home-japan-scaled-interior.jpg", sub: "Бамбук" },
     { to: "/offices", k: "nav.offices", ru: "Офисы", img: "of-2.jpg", sub: "Под айдентику команды" },
   ] as const;
   return (
@@ -28,7 +28,7 @@ function Home() {
            <h1>Декор для розеток и выключателей</h1>
            <p className="lead">Декоративные накладки для розеток и выключателей. Клеятся поверх штатной панели или обрамляют её. Без электрика и без замены фурнитуры.</p>
         </div>
-        <div className="hero-media"><img src={imageSrc("home-dining-mockup.jpg")} alt="Визуализация столовой с ботанической росписью и выключателем «Солнце»" width={1120} height={1400} /></div>
+        <div className="hero-media"><img src={imageSrc("home-dining-scaled-interior.jpg")} alt="Визуализация столовой с ботанической росписью и выключателем «Солнце»" width={1120} height={1400} /></div>
       </div>
       <section className="band"><div className="wrap">
         <div className="sec-head"><h2>Куда поставить</h2></div>
@@ -43,7 +43,7 @@ function Home() {
         <CatalogNote />
       </div></section>
       <section><div className="wrap split">
-         <img className="context-image" src={imageSrc("italy-buffet-interior.jpg")} alt="Визуализация розетки «Олива» на стене с натюрмортом у деревянного буфета" loading="lazy" width={1120} height={1400} />
+         <img className="context-image" src={imageSrc("home-italy-scaled-interior.jpg")} alt="Визуализация розетки «Олива» на стене с натюрмортом у деревянного буфета" loading="lazy" width={1120} height={1400} />
         <div>
           <h2>И ещё много где</h2>
            <p className="lead">Ресторан лишь один из сценариев. Те же рамки работают везде, где интерьер собран с вниманием к деталям.</p>

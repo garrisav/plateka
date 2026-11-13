@@ -63,3 +63,9 @@
 - [x] Replace the unclear panel headline with an explicit outlet and switch decor heading.
 - [x] Update Georgia and Italy tiles with approved interior images and remove the section subtitle.
 - [x] Verify desktop and mobile images and navigation, run the routing test and commit.
+
+## Home page product scale
+
+- [x] Reduce oversized products in home page room images while preserving room style, white materials and product structure.
+- [x] Use home-only image variants and approved smaller interiors without modifying series or catalog images.
+- [x] Verify image details and product scale on desktop and mobile, run the routing test and commit assets.

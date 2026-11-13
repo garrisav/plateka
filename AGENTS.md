@@ -35,6 +35,7 @@ use the editor.
 - Resolve catalog image names through src/lib/media.ts in presentation code; bundled visualization imports replace legacy photos without changing catalog or order identifiers.
 - Keep SKU values unchanged internally and format them with displaySku for presentation so copy changes cannot break order links.
 - Use opt-in minimal presentation and route-scoped interior image overrides for staged page reviews; keep catalog identifiers and other pages unchanged until approved.
+- Use separately named home-only interior assets for homepage scale adjustments; shared series media must stay unchanged during scoped reviews.
 - Store uploaded product originals unmodified on Lovable Assets and commit their JSON pointers; resolve each pointer's URL through the shared media map to preserve exact source pixels.
 - Render installation, compatibility and unit-price guidance through the shared CatalogNote below catalogs and the order form; one shared component prevents divergent explanations.
 - Pass native-language phrases, per-SKU names and interior-caption visibility into SeriesPage as opt-in presentation props and render names through ProductNativeName; this isolates staged presentation changes from catalog identifiers and unrelated series.
