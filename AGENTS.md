@@ -37,3 +37,4 @@ use the editor.
 - Use opt-in minimal presentation and route-scoped interior image overrides for staged page reviews; keep catalog identifiers and other pages unchanged until approved.
 - Store uploaded product originals unmodified on Lovable Assets and commit their JSON pointers; resolve each pointer's URL through the shared media map to preserve exact source pixels.
 - Render installation, compatibility and unit-price guidance through the shared CatalogNote below catalogs and the order form; one shared component prevents divergent explanations.
+- Pass native-language greetings and translations into SeriesPage as an opt-in presentation prop; this keeps staged language additions isolated from catalog data and other series.

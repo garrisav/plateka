@@ -20,4 +20,15 @@ describe("order mailto", () => {
       expect(new URLSearchParams(url.split("?")[1]).get("subject")).toBe(`Заявка Plateka: ${id}`);
     }
   });
+
+  it("keeps all four updated Italian designs orderable with their existing identifiers", () => {
+    const ids = ["IT-01", "IT-02", "IT-03", "IT-04"];
+    expect(SERIES.italy.cards.map((card) => card.sku)).toEqual(ids);
+    for (const id of ids) {
+      expect(ORDER_OPTIONS.some(([value]) => value === id)).toBe(true);
+      expect(SERIES.italy.cards.find((card) => card.sku === id)?.soon).not.toBe(true);
+      const url = buildOrderMailto({ design: id, qty: "1", name: "Ann", phone: "050", msg: "" });
+      expect(new URLSearchParams(url.split("?")[1]).get("subject")).toBe(`Заявка Plateka: ${id}`);
+    }
+  });
 });

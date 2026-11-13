@@ -2,7 +2,7 @@ import { CatalogNote, Layout, ProductCard } from "./Site";
 import { displaySku, type Series } from "@/lib/catalog";
 import { imageSrc } from "@/lib/media";
 
-export function SeriesPage({ s, minimal = false, imageOverrides }: { s: Series; minimal?: boolean; imageOverrides?: Record<string, string> }) {
+export function SeriesPage({ s, minimal = false, imageOverrides, greeting }: { s: Series; minimal?: boolean; imageOverrides?: Record<string, string>; greeting?: { lang: string; text: string; translation: string } }) {
   const seriesImage = (name: string) => imageSrc(imageOverrides?.[name] ?? name);
   return (
     <Layout theme={s.theme}>
@@ -10,6 +10,10 @@ export function SeriesPage({ s, minimal = false, imageOverrides }: { s: Series; 
         <div>
           <p className="kicker">{s.kicker}</p>
           <h1>{s.h1}</h1>
+          {greeting && <div className="series-greeting">
+            <p className="greeting-text" lang={greeting.lang} dir="ltr">{greeting.text}</p>
+            <p className="greeting-translation">* {greeting.translation}</p>
+          </div>}
         </div>
         <div className={`hero-media${s.hero.square ? " square" : ""}`}>
           <img src={seriesImage(s.hero.img)} alt={s.hero.alt} width={s.hero.square ? 900 : 1120} height={s.hero.square ? 900 : 1400} />

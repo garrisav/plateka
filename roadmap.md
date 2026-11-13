@@ -30,3 +30,10 @@
 - [x] Remove introductory catalog and photo buttons and their unused code across pages, preserving product ordering and form controls.
 - [x] Combine installation, panel compatibility and per-item price information into one clear shared note below relevant products and form.
 - [x] Verify all pages, mobile layout and model ordering, run existing tests and commit.
+
+## Italy images and Georgian greeting
+
+- [x] Store the four Italian uploads unmodified as CDN assets and map them to the existing models.
+- [x] Update only Italian interiors with realistic product scale, matching white frames and minimal captions.
+- [x] Add a Georgian welcome and Russian translation below the Georgia title in a ceramic accent color.
+- [x] Verify image fidelity, Italian ordering, desktop and mobile layouts; run tests and commit images and code.

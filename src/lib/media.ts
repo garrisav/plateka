@@ -5,10 +5,12 @@ import chinaEntry from "@/assets/china-entry-interior.jpg";
 import japanCounter from "@/assets/japan-counter-interior.jpg";
 import japanShoji from "@/assets/japan-shoji-interior.jpg";
 import homeDining from "@/assets/home-dining-mockup.jpg";
-import italyAcanthus from "@/assets/italy-acanthus-product.jpg";
-import italyOlive from "@/assets/italy-olive-product.jpg";
-import italyGothic from "@/assets/italy-gothic-product.jpg";
-import italyLily from "@/assets/italy-lily-product.jpg";
+import italyAcanthus from "@/assets/italy-acanthus-original.png.asset.json";
+import italyOlive from "@/assets/italy-olive-original.png.asset.json";
+import italyGothic from "@/assets/italy-gothic-original.png.asset.json";
+import italyLily from "@/assets/italy-lily-original.png.asset.json";
+import italyOliveReviewed from "@/assets/italy-olive-reviewed-interior.jpg";
+import italyAcanthusReviewed from "@/assets/italy-acanthus-reviewed-interior.jpg";
 import chinaClouds from "@/assets/china-clouds-original.png.asset.json";
 import chinaMeander from "@/assets/china-meander-original.png.asset.json";
 import chinaPeony from "@/assets/china-peony-original.png.asset.json";
@@ -28,6 +30,8 @@ const images: Record<string, string> = {
   "ge-pletenka.jpg": georgiaBraidProduct,
   "italy-buffet-interior.jpg": italyBuffet,
   "italy-entry-interior.jpg": italyEntry,
+  "italy-olive-reviewed-interior.jpg": italyOliveReviewed,
+  "italy-acanthus-reviewed-interior.jpg": italyAcanthusReviewed,
   "china-tea-interior.jpg": chinaTea,
   "china-entry-interior.jpg": chinaEntry,
   "china-clouds-reviewed-interior.jpg": chinaCloudsReviewed,
@@ -35,10 +39,10 @@ const images: Record<string, string> = {
   "japan-counter-interior.jpg": japanCounter,
   "japan-shoji-interior.jpg": japanShoji,
   "home-dining-mockup.jpg": homeDining,
-  "it-akanf.jpg": italyAcanthus,
-  "it-oliva.jpg": italyOlive,
-  "it-gotika.jpg": italyGothic,
-  "it-liliya.jpg": italyLily,
+  "it-akanf.jpg": italyAcanthus.url,
+  "it-oliva.jpg": italyOlive.url,
+  "it-gotika.jpg": italyGothic.url,
+  "it-liliya.jpg": italyLily.url,
   "cn-oblaka.jpg": chinaClouds.url,
   "cn-meandr.jpg": chinaMeander.url,
   "cn-pion.jpg": chinaPeony.url,
