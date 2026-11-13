@@ -10,33 +10,102 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ChinaRouteImport } from './routes/china'
+import { Route as GeorgiaRouteImport } from './routes/georgia'
+import { Route as ItalyRouteImport } from './routes/italy'
+import { Route as JapanRouteImport } from './routes/japan'
+import { Route as OfficesRouteImport } from './routes/offices'
+import { Route as OrderRouteImport } from './routes/order'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ChinaRoute = ChinaRouteImport.update({
+  id: '/china',
+  path: '/china',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GeorgiaRoute = GeorgiaRouteImport.update({
+  id: '/georgia',
+  path: '/georgia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ItalyRoute = ItalyRouteImport.update({
+  id: '/italy',
+  path: '/italy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JapanRoute = JapanRouteImport.update({
+  id: '/japan',
+  path: '/japan',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OfficesRoute = OfficesRouteImport.update({
+  id: '/offices',
+  path: '/offices',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrderRoute = OrderRouteImport.update({
+  id: '/order',
+  path: '/order',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/china': typeof ChinaRoute
+  '/georgia': typeof GeorgiaRoute
+  '/italy': typeof ItalyRoute
+  '/japan': typeof JapanRoute
+  '/offices': typeof OfficesRoute
+  '/order': typeof OrderRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/china': typeof ChinaRoute
+  '/georgia': typeof GeorgiaRoute
+  '/italy': typeof ItalyRoute
+  '/japan': typeof JapanRoute
+  '/offices': typeof OfficesRoute
+  '/order': typeof OrderRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/china': typeof ChinaRoute
+  '/georgia': typeof GeorgiaRoute
+  '/italy': typeof ItalyRoute
+  '/japan': typeof JapanRoute
+  '/offices': typeof OfficesRoute
+  '/order': typeof OrderRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/china' | '/georgia' | '/italy' | '/japan' | '/offices' | '/order'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/china' | '/georgia' | '/italy' | '/japan' | '/offices' | '/order'
+  id:
+    | '__root__'
+    | '/'
+    | '/china'
+    | '/georgia'
+    | '/italy'
+    | '/japan'
+    | '/offices'
+    | '/order'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ChinaRoute: typeof ChinaRoute
+  GeorgiaRoute: typeof GeorgiaRoute
+  ItalyRoute: typeof ItalyRoute
+  JapanRoute: typeof JapanRoute
+  OfficesRoute: typeof OfficesRoute
+  OrderRoute: typeof OrderRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +117,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/china': {
+      id: '/china'
+      path: '/china'
+      fullPath: '/china'
+      preLoaderRoute: typeof ChinaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/georgia': {
+      id: '/georgia'
+      path: '/georgia'
+      fullPath: '/georgia'
+      preLoaderRoute: typeof GeorgiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/italy': {
+      id: '/italy'
+      path: '/italy'
+      fullPath: '/italy'
+      preLoaderRoute: typeof ItalyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/japan': {
+      id: '/japan'
+      path: '/japan'
+      fullPath: '/japan'
+      preLoaderRoute: typeof JapanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/offices': {
+      id: '/offices'
+      path: '/offices'
+      fullPath: '/offices'
+      preLoaderRoute: typeof OfficesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/order': {
+      id: '/order'
+      path: '/order'
+      fullPath: '/order'
+      preLoaderRoute: typeof OrderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ChinaRoute: ChinaRoute,
+  GeorgiaRoute: GeorgiaRoute,
+  ItalyRoute: ItalyRoute,
+  JapanRoute: JapanRoute,
+  OfficesRoute: OfficesRoute,
+  OrderRoute: OrderRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

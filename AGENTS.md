@@ -28,3 +28,6 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+- Plateka site styles live in src/plateka.css (ported verbatim from the source site) with `--pk-*` variables, to avoid clashing with shadcn tokens in styles.css.
+- Language is carried in the `?lang=` search param (validated on the root route), not localStorage; catalog content lives in src/lib/catalog.ts.

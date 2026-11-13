@@ -1,0 +1,9 @@
+[
+ {"capability":"code: 7 static pages (home, 4 series, offices, order)","source":"site/*.html + build.py","outcome":"migrate","status":"verified","next_action":"none"},
+ {"capability":"design: style.css, themes per series, fonts","source":"style.css","outcome":"migrate","status":"verified","next_action":"none"},
+ {"capability":"images","source":"site/img","outcome":"migrate","status":"verified","next_action":"none"},
+ {"capability":"i18n RU/HE/EN via ?lang=, RTL","source":"i18n.js","outcome":"migrate","status":"verified","next_action":"none"},
+ {"capability":"order form -> mailto","source":"order.html","outcome":"migrate","status":"verified","next_action":"owner to supply real email (placeholder REPLACE_WITH_YOUR_EMAIL)"},
+ {"capability":"WhatsApp link","source":"order.html","outcome":"migrate","status":"pending","next_action":"owner to supply real number (placeholder 972XXXXXXXXX)"},
+ {"capability":"database, auth, records, storage, secrets, webhooks, schedules","source":"none","outcome":"absent","status":"verified","next_action":"none"}
+]

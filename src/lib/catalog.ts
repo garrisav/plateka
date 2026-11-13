@@ -1,0 +1,115 @@
+export type Card = { sku: string; name: string; kind: string; where: string; img: string; tag?: string; soon?: boolean };
+export type Interior = { img: string; x: number; y: number; sku: string; name: string; cap: string; sub: string };
+export type PhInterior = { kind: string; title: string; src: string; bg: string; pattern: string; mini: string };
+export type Series = {
+  theme: "georgia" | "italy" | "china" | "japan";
+  title: string; kicker: string; h1: string; lead: string;
+  hero: { img: string; alt: string; square?: boolean };
+  cards: Card[]; interiors?: Interior[]; phInteriors?: PhInterior[];
+  intTitle: string; intLead: string; places: string[];
+};
+
+export const SERIES: Record<Series["theme"], Series> = {
+  georgia: {
+    theme: "georgia", title: "Грузинский стол", kicker: "Серия 01 · Грузия", h1: "Грузинский стол",
+    lead: "Лоза, плетёнка, арки и солнечные розетки — орнаменты, которые продолжают тёплую штукатурку, глиняные кувшины и картины на стене.",
+    hero: { img: "ge-int-plug.jpg", alt: "Розетка в рамке «Лоза» рядом с картиной застолья в духе Пиросмани" },
+    cards: [
+      { sku: "GE-01", name: "Лоза", kind: "Розетка", where: "У стола, рядом с винной полкой", img: "ge-loza.jpg", tag: "Вариант A" },
+      { sku: "GE-02", name: "Плетёнка", kind: "Розетка", where: "Коридор, барная стойка", img: "ge-pletenka.jpg", tag: "Вариант B" },
+      { sku: "GE-03", name: "Аркада", kind: "Выключатель", where: "Арочные ниши, вход в зал", img: "ge-arkada.jpg" },
+      { sku: "GE-04", name: "Солнце", kind: "Выключатель", where: "Банкетная комната, прихожая", img: "ge-solntse.jpg" },
+    ],
+    interiors: [
+      { img: "ge-int-plug.jpg", x: 78.5, y: 56, sku: "GE-01", name: "Лоза", cap: "Розетка «Лоза» у стола", sub: "Под картиной с застольем" },
+      { img: "ge-int-switch.jpg", x: 69, y: 46.5, sku: "GE-04", name: "Солнце", cap: "Выключатель «Солнце» у прохода", sub: "Рядом с ланью на чёрной клеёнке" },
+    ],
+    intTitle: "В интерьере",
+    intLead: "Интерьеры навеяны картинами Нико Пиросмани: чёрная клеёнка, застолье, лань. Рамка — единственная светлая деталь на стене, взгляд идёт к ней.",
+    places: ["Грузинский ресторан", "Винный бар", "Хинкальная", "Гостевой дом", "Столовая дома", "Банкетный зал"],
+  },
+  italy: {
+    theme: "italy", title: "Итальянская тратория", kicker: "Серия 02 · Италия", h1: "Итальянская тратория",
+    lead: "Аканф, олива, готическое окно и лилия. Спокойные белые рамки для стен цвета охры и выцветшей штукатурки.",
+    hero: { img: "it-akanf.jpg", alt: "Выключатель в рамке «Аканф»", square: true },
+    cards: [
+      { sku: "IT-01", name: "Аканф", kind: "Выключатель", where: "Вход в зал, лепной потолок", img: "it-akanf.jpg" },
+      { sku: "IT-02", name: "Олива", kind: "Розетка", where: "Кухня, стена у буфета", img: "it-oliva.jpg" },
+      { sku: "IT-03", name: "Готика", kind: "Розетка", where: "Винный погреб, коридор", img: "it-gotika.jpg" },
+      { sku: "IT-04", name: "Лилия", kind: "Выключатель", where: "Прихожая, спальня", img: "it-liliya.jpg" },
+    ],
+    phInteriors: [
+      { kind: "Розетка", title: "Тратория, стена у буфета", src: "по натюрмортам Джорджо Моранди", bg: "#8C7B66", pattern: "radial-gradient(circle at 30% 70%,#C9B79C 0 18%,transparent 19%),radial-gradient(circle at 62% 64%,#A89379 0 12%,transparent 13%)", mini: "it-oliva.jpg" },
+      { kind: "Выключатель", title: "Вход в зал", src: "по натюрмортам Джорджо Моранди", bg: "#6E6455", pattern: "linear-gradient(90deg,transparent 60%,rgba(255,255,255,.12) 60% 64%,transparent 64%)", mini: "it-akanf.jpg" },
+    ],
+    intTitle: "Интерьеры — в работе",
+    intLead: "Следующий этап: два интерьера в палитре натюрмортов Джорджо Моранди — приглушённый белый, охра, серо-розовый.",
+    places: ["Тратория", "Пиццерия", "Кофейня", "Винотека", "Кухня дома", "Прихожая"],
+  },
+  china: {
+    theme: "china", title: "Китайский зал", kicker: "Серия 03 · Китай", h1: "Китайский зал",
+    lead: "Облака, меандр и пион. Рамки для залов с лаком, тёмным деревом и красным акцентом.",
+    hero: { img: "cn-oblaka.jpg", alt: "Розетка в рамке «Облака»", square: true },
+    cards: [
+      { sku: "CN-01", name: "Облака", kind: "Розетка", where: "Чайная комната, зал", img: "cn-oblaka.jpg" },
+      { sku: "CN-02", name: "Меандр", kind: "Розетка", where: "Коридор, барная стойка", img: "cn-meandr.jpg" },
+      { sku: "CN-03", name: "Пион", kind: "Выключатель", where: "Вход, приватный кабинет", img: "cn-pion.jpg" },
+      { sku: "CN-04", name: "В работе", kind: "Выключатель", where: "Новый дизайн серии", img: "cn-meandr.jpg", tag: "Скоро", soon: true },
+    ],
+    phInteriors: [
+      { kind: "Розетка", title: "Чайная комната", src: "по живописи шань-шуй эпохи Сун", bg: "#2E3A35", pattern: "repeating-linear-gradient(170deg,transparent 0 22px,rgba(255,255,255,.06) 22px 24px)", mini: "cn-oblaka.jpg" },
+      { kind: "Выключатель", title: "Вход в зал", src: "по цветам и птицам Ци Байши", bg: "#5B2324", pattern: "radial-gradient(circle at 75% 30%,#8E3A3A 0 14%,transparent 15%)", mini: "cn-pion.jpg" },
+    ],
+    intTitle: "Интерьеры — в работе",
+    intLead: "Следующий этап: два интерьера по мотивам пейзажей шань-шуй эпохи Сун и цветов Ци Байши.",
+    places: ["Китайский ресторан", "Чайная", "Дим-сам бар", "Кабинет", "Гостиная", "Прихожая"],
+  },
+  japan: {
+    theme: "japan", title: "Японская стойка", kicker: "Серия 04 · Япония", h1: "Японская стойка",
+    lead: "Бамбук и чистые линии. Рамки для светлого дерева, бумаги сёдзи и неяркого света.",
+    hero: { img: "jp-bambuk.jpg", alt: "Выключатель в рамке «Бамбук»", square: true },
+    cards: [
+      { sku: "JP-01", name: "Бамбук", kind: "Выключатель", where: "Вход, коридор с сёдзи", img: "jp-bambuk.jpg" },
+      { sku: "JP-02", name: "В работе", kind: "Розетка", where: "Новый дизайн серии", img: "jp-bambuk.jpg", tag: "Скоро", soon: true },
+    ],
+    phInteriors: [
+      { kind: "Розетка", title: "Стойка суши-бара", src: "по гравюрам укиё-э Хиросигэ", bg: "#23324A", pattern: "repeating-radial-gradient(circle at 50% 120%,transparent 0 14px,rgba(255,255,255,.08) 14px 16px)", mini: "jp-bambuk.jpg" },
+      { kind: "Выключатель", title: "Коридор с сёдзи", src: "по гравюрам укиё-э Хокусая", bg: "#3B3A33", pattern: "repeating-linear-gradient(90deg,transparent 0 46px,rgba(255,255,255,.1) 46px 49px)", mini: "jp-bambuk.jpg" },
+    ],
+    intTitle: "Интерьеры — в работе",
+    intLead: "Следующий этап: два интерьера по мотивам гравюр укиё-э — Хиросигэ и Хокусай.",
+    places: ["Суши-бар", "Рамен-бар", "Чайная", "Спальня", "Кабинет", "Прихожая"],
+  },
+};
+
+export const OFFICE_CARDS: Card[] = [
+  { sku: "OF-01", name: "Волна", kind: "Розетка", where: "Опенспейс, кухня", img: "of-1.jpg", tag: "Пример" },
+  { sku: "OF-02", name: "Шестерня", kind: "Выключатель", where: "Переговорная", img: "of-2.jpg", tag: "Пример" },
+  { sku: "OF-03", name: "Кубики", kind: "Розетка", where: "Зона отдыха", img: "of-3.jpg", tag: "Пример" },
+  { sku: "OF-04", name: "Орбиты", kind: "Выключатель", where: "Ресепшен", img: "of-4.jpg", tag: "Пример" },
+];
+
+export const ORDER_OPTIONS: [string, string][] = [
+  ["GE-01", "Лоза"], ["GE-02", "Плетёнка"], ["GE-03", "Аркада"], ["GE-04", "Солнце"],
+  ["IT-01", "Аканф"], ["IT-02", "Олива"], ["IT-03", "Готика"], ["IT-04", "Лилия"],
+  ["CN-01", "Облака"], ["CN-02", "Меандр"], ["CN-03", "Пион"], ["JP-01", "Бамбук"], ["OF", "Под айдентику офиса"],
+];
+
+export const ORDER_EMAIL = "REPLACE_WITH_YOUR_EMAIL";
+export const WHATSAPP_URL = "https://wa.me/972XXXXXXXXX";
+
+export function buildOrderMailto(f: { design: string; qty: string; name: string; phone: string; msg: string }) {
+  const body = `Дизайн: ${f.design}\nКоличество: ${f.qty}\nИмя: ${f.name}\nТелефон: ${f.phone}\nКомментарий: ${f.msg}`;
+  return `mailto:${ORDER_EMAIL}?subject=${encodeURIComponent("Заявка Plateka: " + f.design)}&body=${encodeURIComponent(body)}`;
+}
+
+export const pageHead = (title: string, description = "Декоративные накладки для израильских розеток и выключателей") => ({
+  meta: [
+    { title: `${title} — Plateka` },
+    { name: "description", content: description },
+    { property: "og:title", content: `${title} — Plateka` },
+    { property: "og:description", content: description },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary_large_image" },
+  ],
+});
