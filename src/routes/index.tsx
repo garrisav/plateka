@@ -14,8 +14,8 @@ function Home() {
   const t = useT();
   const s = langSearch(lang);
   const tiles = [
-    { to: "/georgia", k: "nav.georgia", ru: "Грузия", img: "ge-int-plug.jpg", sub: "Лоза, плетёнка, аркада, солнце", wide: true },
-    { to: "/italy", k: "nav.italy", ru: "Италия", img: "italy-buffet-interior.jpg", sub: "Аканф, олива, готика, лилия", wide: true },
+    { to: "/georgia", k: "nav.georgia", ru: "Грузия", img: "georgia-vine-interior.jpg", sub: "Лоза, плетёнка, аркада, солнце", wide: true },
+    { to: "/italy", k: "nav.italy", ru: "Италия", img: "italy-olive-reviewed-interior.jpg", sub: "Аканф, олива, готика, лилия", wide: true },
     { to: "/china", k: "nav.china", ru: "Китай", img: "china-entry-interior.jpg", sub: "Облака, меандр, пион" },
     { to: "/japan", k: "nav.japan", ru: "Япония", img: "japan-counter-interior.jpg", sub: "Бамбук" },
     { to: "/offices", k: "nav.offices", ru: "Офисы", img: "of-2.jpg", sub: "Под айдентику команды" },
@@ -25,13 +25,13 @@ function Home() {
       <div className="wrap hero">
         <div>
           <p className="kicker">Каталог · осень 2026</p>
-           <h1>Белая панель на стене тоже может быть частью интерьера</h1>
+           <h1>Декор для розеток и выключателей</h1>
            <p className="lead">Декоративные накладки для розеток и выключателей. Клеятся поверх штатной панели или обрамляют её. Без электрика и без замены фурнитуры.</p>
         </div>
         <div className="hero-media"><img src={imageSrc("home-dining-mockup.jpg")} alt="Визуализация столовой с ботанической росписью и выключателем «Солнце»" width={1120} height={1400} /></div>
       </div>
       <section className="band"><div className="wrap">
-        <div className="sec-head"><h2>Куда поставить</h2><p>Серии собраны вокруг мест, а не вокруг узоров: зал с характером, прихожая, переговорная.</p></div>
+        <div className="sec-head"><h2>Куда поставить</h2></div>
         <div className="tiles">
           {tiles.map((x) => (
             <Link key={x.to} className={`tile${"wide" in x ? " wide" : ""}`} to={x.to} search={s}>

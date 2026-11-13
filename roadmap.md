@@ -57,3 +57,9 @@
 - [x] Add an Italian dining phrase, its translation below the main image, and Italian product names with one translation.
 - [x] Reuse the approved title hierarchy and series heading format without altering product images or identifiers.
 - [x] Verify desktop and mobile pages, model ordering and other series; run relevant tests and commit.
+
+## Home page review
+
+- [x] Replace the unclear panel headline with an explicit outlet and switch decor heading.
+- [x] Update Georgia and Italy tiles with approved interior images and remove the section subtitle.
+- [x] Verify desktop and mobile images and navigation, run the routing test and commit.
