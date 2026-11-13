@@ -44,3 +44,9 @@
 - [x] Attach a small asterisk to the greeting and move its translation below the main image.
 - [x] Add Georgian product names and smaller Russian translations to cards and interior captions.
 - [x] Verify desktop and mobile text fit, other pages and ordering; run tests and commit.
+
+## Georgian title and label correction
+
+- [x] Reduce main title and greeting by 20 percent, retaining their hierarchy and attached punctuation.
+- [x] Rename Georgia catalog heading and remove duplicate Russian names from product labels.
+- [x] Verify desktop and mobile layout and ordering, run relevant tests and commit.

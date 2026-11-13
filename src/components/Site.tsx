@@ -64,7 +64,7 @@ export function ProductCard({ c, minimal = false, nativeName }: { c: Card; minim
       </div>
       <div className="body">
         <span className="sku">{displaySku(c.sku)}{!minimal && <> · <span>{c.kind}</span></>}</span>
-        <h3>{c.name}</h3>{!minimal && <p className="where">{c.where}</p>}
+        {!nativeName && <h3>{c.name}</h3>}{!minimal && <p className="where">{c.where}</p>}
         <ProductNativeName name={nativeName} />
         <div className="foot">
           <span className="price">₪ __</span>

@@ -21,7 +21,7 @@ export function SeriesPage({ s, minimal = false, imageOverrides, greeting, nativ
         </figure>
       </div>
       <section className="band" id="catalog"><div className="wrap">
-        <div className="sec-head"><h2>Дизайны серии</h2></div>
+        <div className="sec-head"><h2>{nativeNames ? `Серия «${s.title}»` : "Дизайны серии"}</h2></div>
         <div className="grid">{s.cards.map((c) => <ProductCard key={c.sku} c={c} minimal={minimal} nativeName={nativeNames?.[c.sku]} />)}</div>
         <CatalogNote />
       </div></section>
@@ -33,7 +33,7 @@ export function SeriesPage({ s, minimal = false, imageOverrides, greeting, nativ
               <div className="frame"><img src={seriesImage(i.img)} alt={i.cap} loading="lazy" width={1120} height={1400} />
                 {!minimal && <a className="spot-label" href={`#${i.sku}`} style={{ left: `${i.x}%`, top: `${i.y}%`, translate: "-50% 0" }}>{displaySku(i.sku)} · {i.name}</a>}</div>
               <figcaption className={nativeNames?.[i.sku] ? "native-caption" : undefined}>
-                {minimal ? <b>{displaySku(i.sku)} · {i.name}</b> : <><b>{i.cap}</b><span>{i.sub}</span></>}
+                {nativeNames?.[i.sku] ? <b className="sku">{displaySku(i.sku)}</b> : minimal ? <b>{displaySku(i.sku)} · {i.name}</b> : <><b>{i.cap}</b><span>{i.sub}</span></>}
                 <ProductNativeName name={nativeNames?.[i.sku]} />
               </figcaption>
             </figure>
