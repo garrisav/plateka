@@ -3,6 +3,7 @@ import { CatalogNote, Layout } from "@/components/Site";
 import { langSearch, useLang, useT, useTr } from "@/lib/i18n";
 import { pageHead } from "@/lib/catalog";
 import { imageSrc } from "@/lib/media";
+import installSteps from "@/assets/installation-steps-color.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => pageHead("Декор для розеток и выключателей"),
@@ -55,11 +56,10 @@ function Home() {
       </div></section>
       <section className="band"><div className="wrap">
         <div className="sec-head"><h2>{tr("Как это работает")}</h2></div>
-        <div className="steps">
-          <div className="step"><h3>{tr("Пришлите фото панели")}</h3><p>{tr("Сверху, без сильного наклона. По нему подтвердим размер и посадку.")}</p></div>
-           <div className="step"><h3>{tr("Выберите дизайн")}</h3><p>{tr("Цена указана на каждой карточке. Первая серия выполнена в белом цвете.")}</p></div>
-          <div className="step"><h3>{tr("Наклейте поверх")}</h3><p>{tr("Клавиша, отверстия и механизм остаются как были. Электрик не нужен.")}</p></div>
-        </div>
+        <img src={installSteps.url} alt={tr("Иллюстрация установки накладки в три шага")} loading="lazy" width={1859} height={846} style={{ width: "100%", maxWidth: 760, height: "auto", display: "block", borderRadius: 4 }} />
+        <ol className="steps">
+          {["Снимите защитную плёнку с клейких полосок на обратной стороне накладки.", "Наденьте накладку на штатную рамку так, чтобы она полностью её закрыла.", "Прижмите по краям на несколько секунд. Розетка или клавиша остаются открытыми и работают как прежде."].map((x) => <li className="step" key={x}><p>{tr(x)}</p></li>)}
+        </ol>
       </div></section>
     </Layout>
   );
