@@ -2,6 +2,7 @@ import { CatalogNote, Layout, ProductCard } from "./Site";
 import { displaySku, type Series } from "@/lib/catalog";
 import { imageSrc } from "@/lib/media";
 import { useLang, useTr } from "@/lib/i18n";
+import installSteps from "@/assets/installation-steps.png.asset.json";
 import { ProductNativeName, type NativeName } from "./NativeName";
 
 export function SeriesPage({ s, minimal = false, imageOverrides, greeting, nativeNames, hideInteriorCaptions = false }: { s: Series; minimal?: boolean; imageOverrides?: Record<string, string>; greeting?: NativeName; nativeNames?: Record<string, NativeName>; hideInteriorCaptions?: boolean }) {
@@ -49,6 +50,13 @@ export function SeriesPage({ s, minimal = false, imageOverrides, greeting, nativ
       <section className="dark"><div className="wrap split">
         <div><h2>{tr("Где это уместно")}</h2><p>{tr("Там, где стена уже рассказывает историю, а белая панель выбивается из неё.")}</p></div>
         <ul className="places">{s.places.map((p) => <li key={p}>{tr(p)}</li>)}</ul>
+      </div></section>
+      <section className="install"><div className="wrap">
+        <div className="sec-head"><h2>{tr("Как установить")}</h2></div>
+        <img src={installSteps.url} alt={tr("Иллюстрация установки накладки в три шага")} loading="lazy" width={1330} height={600} style={{ width: "100%", height: "auto", borderRadius: 4 }} />
+        <ol className="steps">
+          {["Снимите защитную плёнку с клейких полосок на обратной стороне накладки.", "Наденьте накладку на штатную рамку так, чтобы она полностью её закрыла.", "Прижмите по краям на несколько секунд. Розетка или клавиша остаются открытыми и работают как прежде."].map((x) => <li className="step" key={x}><p>{tr(x)}</p></li>)}
+        </ol>
       </div></section>
     </Layout>
   );

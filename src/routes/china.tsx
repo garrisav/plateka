@@ -11,7 +11,7 @@ export const Route = createFileRoute("/china")({
     "CN-02": { lang: "zh-Latn", text: "Huíwén", translation: "Меандр" },
     "CN-04": { lang: "zh-Latn", text: "Zhú", translation: "Бамбук" },
   }} imageOverrides={{
-    "china-tea-interior.jpg": "china-clouds-v2-interior.jpg",
+    "china-tea-interior.jpg": "china-bamboo-v2-interior.jpg",
     "china-entry-interior.jpg": "china-meander-v2-interior.jpg",
   }} />,
 });

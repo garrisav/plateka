@@ -48,14 +48,14 @@ export const SERIES: Record<Series["theme"], Series> = {
   china: {
     theme: "china", title: "Китайский зал", kicker: "Серия 03 · Китай", h1: "Китайский зал",
     lead: "Облака, меандр, пион и бамбук. Рамки для залов с лаком, тёмным деревом и красным акцентом.",
-    hero: { img: "china-tea-interior.jpg", alt: "Розетка «Облака» на нефритовой стене чайной с пейзажем и фарфором" },
+    hero: { img: "china-tea-interior.jpg", alt: "Розетка «Бамбук» на нефритовой стене чайной с пейзажем и фарфором" },
     cards: [
       { sku: "CN-01", name: "Облака", kind: "Розетка", where: "Чайная комната, зал", img: "cn-oblaka-v2" },
       { sku: "CN-02", name: "Меандр", kind: "Розетка", where: "Коридор, барная стойка", img: "cn-meandr-v2" },
       { sku: "CN-04", name: "Бамбук", kind: "Розетка", where: "Чайная комната, прихожая", img: "cn-bamboo-v2" },
     ],
     interiors: [
-      { img: "china-tea-interior.jpg", x: 74, y: 58, sku: "CN-01", name: "Облака", cap: "Розетка «Облака» в чайной", sub: "Нефритовая стена, пейзаж и селадон" },
+      { img: "china-tea-interior.jpg", x: 74, y: 58, sku: "CN-04", name: "Бамбук", cap: "Розетка «Бамбук» в чайной", sub: "Нефритовая стена, пейзаж и селадон" },
       { img: "china-entry-interior.jpg", x: 64, y: 49, sku: "CN-02", name: "Меандр", cap: "Розетка «Меандр» у входа", sub: "Красный лак, резное дерево и цветочная живопись" },
     ],
     intTitle: "В интерьере",
