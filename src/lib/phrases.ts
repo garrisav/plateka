@@ -36,6 +36,7 @@ export const PHRASES: Record<string, P> = {
   "Розетка «Олива» у буфета": { en: "Olive outlet by the sideboard", he: "שקע זית ליד המזנון" },
   "Выключатель «Аканф» у входа": { en: "Acanthus switch by the entrance", he: "מתג אקנתוס ליד הכניסה" },
   "Розетка «Облака» в чайной": { en: "Clouds outlet in the tea room", he: "שקע עננים בחדר התה" },
+  "Розетка «Меандр» у входа": { en: "Meander outlet by the entrance", he: "שקע מאנדר ליד הכניסה" },
   "Выключатель «Пион» у входа": { en: "Peony switch by the entrance", he: "מתג אדמונית ליד הכניסה" },
   "Выключатель «Бамбук» у стойки": { en: "Bamboo switch by the counter", he: "מתג במבוק ליד הדלפק" },
   "Выключатель «Бамбук» рядом с сёдзи": { en: "Bamboo switch next to shoji screens", he: "מתג במבוק ליד מחיצות שוג'י" },

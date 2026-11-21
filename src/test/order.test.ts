@@ -10,8 +10,9 @@ describe("order mailto", () => {
     expect(q.get("body")).toBe("Дизайн: GE-01\nКоличество: 2\nИмя: Ann\nТелефон: 050\nКомментарий: hi");
   });
 
-  it("allows ordering all four supplied Chinese designs using their stable identifiers", () => {
-    const ids = ["CN-01", "CN-02", "CN-03", "CN-04"];
+  it("allows ordering the three current Chinese designs using their stable identifiers", () => {
+    const ids = ["CN-01", "CN-02", "CN-04"];
+    expect(ORDER_OPTIONS.some(([value]) => value === "CN-03")).toBe(false);
     expect(SERIES.china.cards.map((card) => card.sku)).toEqual(ids);
     for (const id of ids) {
       expect(ORDER_OPTIONS.some(([value]) => value === id)).toBe(true);

@@ -23,6 +23,11 @@ import chinaPeony from "@/assets/china-peony-original.png.asset.json";
 import chinaBamboo from "@/assets/china-bamboo-original.png.asset.json";
 import chinaCloudsReviewed from "@/assets/china-clouds-reviewed-interior.jpg";
 import chinaPeonyReviewed from "@/assets/china-peony-reviewed-interior.jpg";
+import chinaCloudsV2 from "@/assets/china-clouds-v2-original.webp.asset.json";
+import chinaMeanderV2 from "@/assets/china-meander-v2-original.png.asset.json";
+import chinaBambooV2 from "@/assets/china-bamboo-v2-original.webp.asset.json";
+import chinaCloudsV2Room from "@/assets/china-clouds-v2-interior.jpg";
+import chinaMeanderV2Room from "@/assets/china-meander-v2-interior.jpg";
 import japanBamboo from "@/assets/japan-bamboo-product.jpg";
 import georgiaVine from "@/assets/georgia-vine-interior.jpg";
 import georgiaSun from "@/assets/georgia-sun-interior.jpg";
@@ -59,6 +64,11 @@ const images: Record<string, string> = {
   "cn-meandr.jpg": chinaMeander.url,
   "cn-pion.jpg": chinaPeony.url,
   "cn-bamboo.png": chinaBamboo.url,
+  "cn-oblaka-v2": chinaCloudsV2.url,
+  "cn-meandr-v2": chinaMeanderV2.url,
+  "cn-bamboo-v2": chinaBambooV2.url,
+  "china-clouds-v2-interior.jpg": chinaCloudsV2Room,
+  "china-meander-v2-interior.jpg": chinaMeanderV2Room,
   "jp-bambuk.jpg": japanBamboo,
 };
 
