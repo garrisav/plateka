@@ -28,7 +28,7 @@ function Home() {
            <h1>Декор для розеток и выключателей</h1>
            <p className="lead">Декоративные накладки для розеток и выключателей. Клеятся поверх штатной панели или обрамляют её. Без электрика и без замены фурнитуры.</p>
         </div>
-        <div className="hero-media"><img src={imageSrc("home-dining-scaled-interior.jpg")} alt="Визуализация столовой с ботанической росписью и выключателем «Солнце»" width={1120} height={1400} /></div>
+        <div className="hero-media"><img src={imageSrc("home-china-tea-scaled-interior.jpg")} alt="Визуализация чайной комнаты с зелёной стеной и розеткой «Облака»" width={1120} height={1408} /></div>
       </div>
       <section className="band"><div className="wrap">
         <div className="sec-head"><h2>Куда поставить</h2></div>
