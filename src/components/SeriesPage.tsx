@@ -53,7 +53,7 @@ export function SeriesPage({ s, minimal = false, imageOverrides, greeting, nativ
       </div></section>
       <section className="install"><div className="wrap">
         <div className="sec-head"><h2>{tr("Как установить")}</h2></div>
-        <img src={installSteps.url} alt={tr("Иллюстрация установки накладки в три шага")} loading="lazy" width={1330} height={600} style={{ width: "100%", height: "auto", borderRadius: 4 }} />
+        <img src={installSteps.url} alt={tr("Иллюстрация установки накладки в три шага")} loading="lazy" width={1330} height={600} style={{ width: "100%", height: "auto", mixBlendMode: "multiply" }} />
         <ol className="steps">
           {["Снимите защитную плёнку с клейких полосок на обратной стороне накладки.", "Наденьте накладку на штатную рамку так, чтобы она полностью её закрыла.", "Прижмите по краям на несколько секунд. Розетка или клавиша остаются открытыми и работают как прежде."].map((x) => <li className="step" key={x}><p>{tr(x)}</p></li>)}
         </ol>
