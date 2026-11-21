@@ -16,7 +16,7 @@ function Home() {
   const tiles = [
     { to: "/georgia", k: "nav.georgia", ru: "Грузия", img: "home-georgia-scaled-interior.jpg", sub: "Лоза, плетёнка, аркада, солнце", wide: true },
     { to: "/italy", k: "nav.italy", ru: "Италия", img: "home-italy-scaled-interior.jpg", sub: "Аканф, олива, готика, лилия", wide: true },
-    { to: "/china", k: "nav.china", ru: "Китай", img: "home-china-scaled-interior.jpg", sub: "Облака, меандр, пион" },
+    { to: "/china", k: "nav.china", ru: "Китай", img: "home-china-tea-scaled-interior.jpg", sub: "Облака, меандр, пион" },
     { to: "/japan", k: "nav.japan", ru: "Япония", img: "home-japan-scaled-interior.jpg", sub: "Бамбук" },
     { to: "/offices", k: "nav.offices", ru: "Офисы", img: "of-2.jpg", sub: "Под айдентику команды" },
   ] as const;

@@ -9,6 +9,7 @@ import homeDiningScaled from "@/assets/home-dining-scaled-interior.jpg";
 import homeGeorgiaScaled from "@/assets/home-georgia-scaled-interior.jpg";
 import homeItalyScaled from "@/assets/home-italy-scaled-interior.jpg";
 import homeChinaScaled from "@/assets/home-china-scaled-interior.jpg";
+import homeChinaTeaScaled from "@/assets/home-china-tea-scaled-interior.jpg";
 import homeJapanScaled from "@/assets/home-japan-scaled-interior.jpg";
 import italyAcanthus from "@/assets/italy-acanthus-original.png.asset.json";
 import italyOlive from "@/assets/italy-olive-original.png.asset.json";
@@ -48,6 +49,7 @@ const images: Record<string, string> = {
   "home-georgia-scaled-interior.jpg": homeGeorgiaScaled,
   "home-italy-scaled-interior.jpg": homeItalyScaled,
   "home-china-scaled-interior.jpg": homeChinaScaled,
+  "home-china-tea-scaled-interior.jpg": homeChinaTeaScaled,
   "home-japan-scaled-interior.jpg": homeJapanScaled,
   "it-akanf.jpg": italyAcanthus.url,
   "it-oliva.jpg": italyOlive.url,
