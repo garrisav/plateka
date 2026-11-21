@@ -6,7 +6,7 @@ import { imageSrc } from "@/lib/media";
 import installSteps from "@/assets/installation-steps-color.png.asset.json";
 
 export const Route = createFileRoute("/")({
-  head: () => pageHead("Декор для розеток и выключателей"),
+  head: () => pageHead("Декоративные накладки для розеток и выключателей"),
   component: Home,
 });
 
@@ -27,8 +27,8 @@ function Home() {
       <div className="wrap hero">
         <div>
           <p className="kicker">{tr("Каталог · осень 2026")}</p>
-           <h1>{tr("Декор для розеток и выключателей")}</h1>
-           <p className="lead">{tr("Декоративные накладки для розеток и выключателей. Клеятся поверх штатной панели или обрамляют её. Без электрика и без замены фурнитуры.")}</p>
+           <h1>{tr("Декоративные накладки для розеток и выключателей")}</h1>
+           <p className="lead">{tr("Клеятся поверх штатной панели или обрамляют её. Без помощи электрика и без замены фурнитуры.")}</p>
         </div>
         <div className="hero-media"><img src={imageSrc("china-bamboo-v2-interior.jpg")} alt={tr("Визуализация чайной комнаты с зелёной стеной и розеткой «Бамбук»")} width={1120} height={1408} /></div>
       </div>

@@ -132,6 +132,7 @@ html[dir="rtl"] .spot{transform:translate(50%,-50%)}
 .tile .soon{position:absolute;z-index:1;inset-block-start:.8rem;inset-inline-end:.8rem;background:rgba(255,255,255,.92);color:#1E1A16;font-size:var(--text-xs);padding:.2rem .5rem;border-radius:2px}
 
 /* Steps */
+.install .steps,.band .steps{max-width:760px;margin-inline:auto}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,3vw,2.5rem);counter-reset:s}
 .step{border-block-start:2px solid var(--pk-ink);padding-block-start:1rem}
 .step::before{counter-increment:s;content:"0" counter(s);font-family:var(--font-display);font-size:var(--text-xl);color:var(--pk-accent);display:block;margin-block-end:.4rem}
@@ -182,3 +183,5 @@ footer p{max-width:60ch}
 }
 @media (max-width:350px){.native-series{--pk-native-greeting-size:2.125rem}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+[dir=rtl] .steps{direction:ltr}
+[dir=rtl] .steps .step{direction:rtl}

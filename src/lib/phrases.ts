@@ -74,8 +74,8 @@ export const PHRASES: Record<string, P> = {
   "Пекарня": { en: "Bakery", he: "מאפייה" },
   // Home
   "Каталог · осень 2026": { en: "Catalog · autumn 2026", he: "קטלוג · סתיו 2026" },
-  "Декор для розеток и выключателей": { en: "Decor for outlets and switches", he: "עיטור לשקעים ולמתגים" },
-  "Декоративные накладки для розеток и выключателей. Клеятся поверх штатной панели или обрамляют её. Без электрика и без замены фурнитуры.": { en: "Decorative covers for outlets and switches. They stick on top of the existing panel or frame it. No electrician, no hardware replacement.", he: "כיסויים דקורטיביים לשקעים ולמתגים. מודבקים מעל הפנל הקיים או ממסגרים אותו. בלי חשמלאי ובלי להחליף אביזרים." },
+  "Декоративные накладки для розеток и выключателей": { en: "Decorative covers for outlets and switches", he: "כיסויים דקורטיביים לשקעים ולמתגים" },
+  "Клеятся поверх штатной панели или обрамляют её. Без помощи электрика и без замены фурнитуры.": { en: "They stick on top of the existing panel or frame it. No electrician needed and no hardware replacement.", he: "מודבקים מעל הפנל הקיים או ממסגרים אותו. ללא צורך בחשמלאי וללא החלפת אביזרים." },
   "Визуализация чайной комнаты с зелёной стеной и розеткой «Бамбук»": { en: "Visualization of a tea room with a green wall and the Bamboo outlet", he: "הדמיה של חדר תה עם קיר ירוק ושקע במבוק" },
   "Куда поставить": { en: "Where to use it", he: "איפה להתקין" },
   "Лоза, плетёнка, аркада, солнце": { en: "Vine, weave, arcade, sun", he: "גפן, קליעה, קשתות, שמש" },
