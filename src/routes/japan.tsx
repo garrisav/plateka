@@ -7,6 +7,6 @@ export const Route = createFileRoute("/japan")({
   component: () => <SeriesPage s={SERIES.japan} minimal hideInteriorCaptions greeting={{
     lang: "ja", text: "いただきます!", translation: "Спасибо за угощение!",
   }} nativeNames={{
-    "JP-01": { lang: "ja", text: "竹", translation: "Бамбук" },
+    "JP-01": { lang: "ja-Latn", text: "Take", translation: "Бамбук" },
   }} />,
 });

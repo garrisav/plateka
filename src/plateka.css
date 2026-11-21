@@ -97,7 +97,7 @@ section{padding-block:clamp(2.5rem,6vw,5rem)}
 .card .foot .order-link{height:auto;padding:0;white-space:normal}
 .product-native-name{display:grid;gap:.3rem;margin-block-start:.3rem}
 .native-name{font-family:var(--font-georgian);font-size:var(--pk-native-name-size);font-weight:500;line-height:1.5;letter-spacing:0;color:var(--pk-ceramic);overflow-wrap:anywhere}
-.greeting-text[lang="it"],.native-name[lang="it"]{font-family:var(--font-display)}
+.greeting-text[lang="it"],.native-name[lang="it"],.native-name[lang$="-Latn"]{font-family:var(--font-display)}
 .greeting-text[lang="zh"],.native-name[lang="zh"]{font-family:'Noto Serif SC',serif}
 .greeting-text[lang="ja"],.native-name[lang="ja"]{font-family:'Noto Serif JP',serif}
 .native-translation{font-size:var(--pk-native-translation-size);color:var(--pk-muted);line-height:1.5}
