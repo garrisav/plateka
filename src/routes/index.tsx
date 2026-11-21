@@ -16,9 +16,9 @@ function Home() {
   const tr = useTr();
   const s = langSearch(lang);
   const tiles = [
+    { to: "/china", k: "nav.china", ru: "Китай", img: "china-meander-v2-interior.jpg", sub: "Облака, меандр, бамбук", wide: true },
     { to: "/georgia", k: "nav.georgia", ru: "Грузия", img: "home-georgia-scaled-interior.jpg", sub: "Лоза, плетёнка, аркада, солнце", wide: true },
-    { to: "/italy", k: "nav.italy", ru: "Италия", img: "home-italy-scaled-interior.jpg", sub: "Аканф, олива, готика, лилия", wide: true },
-    { to: "/china", k: "nav.china", ru: "Китай", img: "home-china-scaled-interior.jpg", sub: "Облака, меандр, пион" },
+    { to: "/italy", k: "nav.italy", ru: "Италия", img: "home-italy-scaled-interior.jpg", sub: "Аканф, олива, готика, лилия" },
     { to: "/japan", k: "nav.japan", ru: "Япония", img: "home-japan-scaled-interior.jpg", sub: "Бамбук" },
     { to: "/offices", k: "nav.offices", ru: "Офисы", img: "of-2.jpg", sub: "Под айдентику команды" },
   ] as const;
@@ -30,7 +30,7 @@ function Home() {
            <h1>{tr("Декор для розеток и выключателей")}</h1>
            <p className="lead">{tr("Декоративные накладки для розеток и выключателей. Клеятся поверх штатной панели или обрамляют её. Без электрика и без замены фурнитуры.")}</p>
         </div>
-        <div className="hero-media"><img src={imageSrc("home-china-tea-scaled-interior.jpg")} alt={tr("Визуализация чайной комнаты с зелёной стеной и розеткой «Облака»")} width={1120} height={1408} /></div>
+        <div className="hero-media"><img src={imageSrc("china-bamboo-v2-interior.jpg")} alt={tr("Визуализация чайной комнаты с зелёной стеной и розеткой «Бамбук»")} width={1120} height={1408} /></div>
       </div>
       <section className="band"><div className="wrap">
         <div className="sec-head"><h2>{tr("Куда поставить")}</h2></div>
@@ -56,7 +56,7 @@ function Home() {
       </div></section>
       <section className="band"><div className="wrap">
         <div className="sec-head"><h2>{tr("Как это работает")}</h2></div>
-        <img src={installSteps.url} alt={tr("Иллюстрация установки накладки в три шага")} loading="lazy" width={1859} height={846} style={{ width: "100%", maxWidth: 760, height: "auto", display: "block", borderRadius: 4 }} />
+        <img src={installSteps.url} alt={tr("Иллюстрация установки накладки в три шага")} loading="lazy" width={1816} height={777} style={{ width: "100%", maxWidth: 760, height: "auto", display: "block", margin: "0 auto 24px" }} />
         <ol className="steps">
           {["Снимите защитную плёнку с клейких полосок на обратной стороне накладки.", "Наденьте накладку на штатную рамку так, чтобы она полностью её закрыла.", "Прижмите по краям на несколько секунд. Розетка или клавиша остаются открытыми и работают как прежде."].map((x) => <li className="step" key={x}><p>{tr(x)}</p></li>)}
         </ol>

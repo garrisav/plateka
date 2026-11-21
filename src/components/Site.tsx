@@ -7,8 +7,8 @@ import { Button } from "@/components/ui/button";
 import { ProductNativeName, type NativeName } from "./NativeName";
 
 const NAV = [
-  ["/", "nav.home", "Главная"], ["/georgia", "nav.georgia", "Грузия"], ["/italy", "nav.italy", "Италия"],
-  ["/china", "nav.china", "Китай"], ["/japan", "nav.japan", "Япония"], ["/offices", "nav.offices", "Офисы"],
+  ["/", "nav.home", "Главная"], ["/china", "nav.china", "Китай"], ["/georgia", "nav.georgia", "Грузия"],
+  ["/italy", "nav.italy", "Италия"], ["/japan", "nav.japan", "Япония"], ["/offices", "nav.offices", "Офисы"],
   ["/order", "nav.order", "Заказать"],
 ] as const;
 
