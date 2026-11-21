@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useRouterState } from "@tanstack/react-router";
+import { PHRASES } from "./phrases";
 
 export type Lang = "he" | "ru" | "en";
 // Phase 1: default language is Russian; switch to "he" at launch.
@@ -11,13 +12,11 @@ const DICT: Record<"en" | "he", Record<string, string>> = {
     "nav.home": "Home", "nav.georgia": "Georgia", "nav.italy": "Italy", "nav.china": "China",
     "nav.japan": "Japan", "nav.offices": "Offices", "nav.order": "Order",
     "btn.order": "Order",
-    notice: "English version is in progress. Some text is still in Russian.",
   },
   he: {
     "nav.home": "ראשי", "nav.georgia": "גאורגיה", "nav.italy": "איטליה", "nav.china": "סין",
     "nav.japan": "יפן", "nav.offices": "משרדים", "nav.order": "הזמנה",
     "btn.order": "להזמנה",
-    notice: "הגרסה בעברית בהכנה. חלק מהטקסט עדיין ברוסית.",
   },
 };
 
@@ -40,11 +39,13 @@ export function useT() {
   return (key: string, ru: string) => (lang === "ru" ? ru : (DICT[lang][key] ?? ru));
 }
 
-export function hasMissing(lang: Lang) {
-  return lang !== "ru"; // most page copy is Russian-only for now
+/** Translate a Russian source phrase into the given language. */
+export function translate(lang: Lang, ru: string) {
+  return lang === "ru" ? ru : (PHRASES[ru]?.[lang] ?? ru);
 }
-export function noticeText(lang: Lang) {
-  return lang === "ru" ? "" : DICT[lang]["notice"] ?? "";
+export function useTr() {
+  const lang = useLang();
+  return (ru: string) => translate(lang, ru);
 }
 
 export function useDocumentLang() {
