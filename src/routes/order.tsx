@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { CatalogNote, Layout } from "@/components/Site";
 import { ORDER_OPTIONS, WHATSAPP_URL, buildOrderMailto, displaySku, pageHead } from "@/lib/catalog";
@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/order")({
   validateSearch: (s: Record<string, unknown>): { design?: string } =>
     typeof s["design"] === "string" ? { design: s["design"] } : {},
+  beforeLoad: () => { throw redirect({ to: "/" }); },
   head: () => pageHead("Заказать", "Пришлите фото панели, и мы подтвердим размер и назовём цену"),
   component: Order,
 });

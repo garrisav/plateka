@@ -23,7 +23,9 @@ export function Layout({ theme, children }: { theme: string; children: ReactNode
       <header className="top"><div className="wrap">
         <Link className="logo" to="/" search={langSearch(lang)}>Plate<span>ka</span></Link>
         <nav className={`nav${open ? " open" : ""}`} aria-label={tr("Разделы")}>
-          {NAV.map(([to, k, ru]) => (
+          {NAV.map(([to, k, ru]) => to === "/order" ? (
+            <span key={to} className="soon-off" aria-disabled="true" title={tr("Пока недоступно")}>{t(k, ru)}</span>
+          ) : (
             <Link key={to} to={to} search={langSearch(lang)} activeOptions={{ exact: true, includeSearch: false }}
               activeProps={{ "aria-current": "page" }}>{t(k, ru)}</Link>
           ))}
@@ -70,7 +72,7 @@ export function ProductCard({ c, minimal = false, nativeName }: { c: Card; minim
         <div className="foot">
           <span className="price">₪ __</span>
           {c.soon ? <span className="where">{tr("Скоро")}</span>
-            : <Button asChild variant="link" className="order-link"><Link to="/order" search={langSearch(lang, { design: c.sku })}>{t("btn.order", "Заказать")}</Link></Button>}
+            : <span className="order-link soon-off" aria-disabled="true" title={tr("Пока недоступно")}>{t("btn.order", "Заказать")}</span>}
         </div>
       </div>
     </article>

@@ -2,6 +2,7 @@
 // Visible text must not contain hyphens or dashes.
 type P = { en: string; he: string };
 export const PHRASES: Record<string, P> = {
+  "Пока недоступно": { en: "Not available yet", he: "עדיין לא זמין" },
   // Layout
   "Dress your plate · декор для розеток и выключателей": { en: "Dress your plate · decor for outlets and switches", he: "Dress your plate · עיטור לשקעים ולמתגים" },
   "Мы не делаем розетки и выключатели и не вмешиваемся в электрику. На сайте представлены визуализации дизайна, а не фото готового изделия.": { en: "We do not make outlets or switches and never touch the wiring. The site shows design visualizations, not photos of finished products.", he: "איננו מייצרים שקעים ומתגים ואיננו נוגעים בחשמל. באתר מוצגות הדמיות של העיצוב, ולא צילומים של מוצר מוגמר." },
